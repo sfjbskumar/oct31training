@@ -10,10 +10,11 @@ public class App
     {
         System.out.println( "Hello World!" );
         Greeting greeting=new Greeting();
-        greeting.sayHello();
-        greeting.sayHi();
-        greeting.sayWelcome();
-        greeting.sayThanks();
+        System.out.println(greeting.sayHello());
+        System.out.println(greeting.sayHi());
+        System.out.println(greeting.sayWelcome());
+        System.out.println(greeting.sayThanks());
+
     }
 
 

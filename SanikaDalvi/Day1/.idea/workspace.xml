@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ddaa4ed-870e-468f-ac12-bf52389895f3" name="Changes" comment="My first commit for java microservices.">
-      <change afterPath="$PROJECT_DIR$/../../hs_err_pid12560.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day2/demo/src/main/java/com/example/demo/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Day2/demo/src/main/java/com/example/demo/DemoController.java" afterDir="false" />
-    </list>
+    <list default="true" id="2ddaa4ed-870e-468f-ac12-bf52389895f3" name="Changes" comment="My first commit for java microservices." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,13 +34,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sfjbs/oct31training/SanikaDalvi/Day1/simple-maven-app&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/sfjbs/oct31training/SanikaDalvi"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Day1" />
