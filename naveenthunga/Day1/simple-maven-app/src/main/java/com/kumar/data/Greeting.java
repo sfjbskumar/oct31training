@@ -1,4 +1,4 @@
-package com.lahari.data;
+package com.kumar.data;
 
 public class Greeting {
 
@@ -15,4 +15,3 @@ public class Greeting {
     return "Thanks";
   }
 }
-

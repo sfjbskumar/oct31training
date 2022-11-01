@@ -1,4 +1,4 @@
-package com.lahari.data;
+package com.kumar.data;
 
 import org.junit.Before;
 import org.junit.Test;
