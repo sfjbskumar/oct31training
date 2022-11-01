@@ -1,4 +1,5 @@
 package com.kumar.data;
+@Component
 
 /**
  * Hello world!
