@@ -8,7 +8,7 @@ public class App {
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
-        com.lahari.data.Greeting greeting=new com.deekshita.data.Greeting();
+        com.lahari.data.Greeting greeting=new com.lahari.data.Greeting();
         System.out.println(greeting.sayHello());
         System.out.println(greeting.sayHi());
         System.out.println(greeting.sayWelcome());
