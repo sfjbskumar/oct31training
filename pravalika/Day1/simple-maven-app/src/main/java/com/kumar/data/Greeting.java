@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package com.lahari.data;
-=======
 package com.kumar.data;
->>>>>>> 651bb9a9e898e99f5a43f2de837ad3d1cd788ad6
 
 public class Greeting {
 
@@ -19,7 +15,3 @@ public class Greeting {
     return "Thanks";
   }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 651bb9a9e898e99f5a43f2de837ad3d1cd788ad6
