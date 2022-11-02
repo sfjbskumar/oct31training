@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD:Karthik/Day2/.idea/compiler.xml
         <module name="demo" />
+=======
+>>>>>>> ebb5dc97dd8f57711325ee58ce00a7c01dd1d624:.idea/compiler.xml
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
