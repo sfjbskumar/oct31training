@@ -1,31 +1,13 @@
-package com.calculator.service.Calculatorapplication;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class CalculatorApplication {
+
 	public static void main(String[] args) {
 		SpringApplication.run(CalculatorApplication.class, args);
 	}
-	@RestController
-	public static class Calculator {
-		@GetMapping("/add")
-		public float addition(@RequestParam(name="a",required=true)float a, @RequestParam(name="b",required = true)float b){
-			return a+b;
-		}
-		@GetMapping("/sub")
-		public float subtraction(@RequestParam(name="a",required=true)int a, @RequestParam(name="b",required = true)int b){
-			return a-b;
-		}
-		@GetMapping("/mul")
-		public float multiplication(@RequestParam(name="a",required=true)int a, @RequestParam(name="b",required = true)int b){
-			return a*b;
-		}
-		@GetMapping("/div")
-		public float division(@RequestParam(name="a",required=true)int a, @RequestParam(name="b",required = true)int b){
-			return a/b;
-		}
-	}
+
 }
