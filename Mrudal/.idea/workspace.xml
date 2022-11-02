@@ -109,13 +109,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667376425324</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mini">
+      <created>1667409495420</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667409495420</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="mycode" />
     <MESSAGE value="mini" />
-    <option name="LAST_COMMIT_MESSAGE" value="mini" />
+    <MESSAGE value="Mini" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mini" />
   </component>
 </project>
