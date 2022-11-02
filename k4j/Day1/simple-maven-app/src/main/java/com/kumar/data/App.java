@@ -10,8 +10,7 @@ public class App
     {
         System.out.println( "Hello World!" );
         Greeting greeting=new Greeting();
-
-        System.out.println(greeting.sayHello());
+        greeting.sayHello();
         greeting.sayHi();
         greeting.sayWelcome();
         greeting.sayThanks();
