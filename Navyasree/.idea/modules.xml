@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<<<<<<<< HEAD:Falguni/Day1/simple-maven-app/.idea/modules.xml
+      <module fileurl="file://$PROJECT_DIR$/.idea/simple-maven-app.iml" filepath="$PROJECT_DIR$/.idea/simple-maven-app.iml" />
+========
+      <module fileurl="file://$PROJECT_DIR$/.idea/Navyasree.iml" filepath="$PROJECT_DIR$/.idea/Navyasree.iml" />
+>>>>>>>> 9dc30a8c067c0f05f2ea1a22a8918c29e726f021:Navyasree/.idea/modules.xml
+    </modules>
+  </component>
+</project>
