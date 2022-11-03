@@ -11,6 +11,18 @@ public class Pension {
     private String pensionmmyy;
     private int installment;
 
+    private String empStatus;
+
+    public String getEmpStatus() {
+        return empStatus;
+    }
+
+    public void setEmpStatus(String empStatus) {
+        this.empStatus = empStatus;
+    }
+
+
+
 
     public int getId() {
         return id;
