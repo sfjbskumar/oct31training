@@ -1,0 +1,6 @@
+version: '3.2'
+services:
+  sprig-boot-app:
+    image: falcon007/spring-boot-app:0.0.1
+    ports:
+      - "8080:8080"
