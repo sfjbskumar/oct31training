@@ -3,9 +3,9 @@ package com.example.PensionManagementSystem.model;
 public class Pension {
     private int id;
     private String name;
-    private String age;
-    private Integer balance_amount;
-    private Integer phone;
+    private int age;
+    private int balance_amount;
+    private int phone;
     private String empstatus;
     private String pensionStatus;
     private String pensionmmyy;
@@ -17,13 +17,13 @@ public class Pension {
     public String getName() {
         return name;
     }
-    public String getAge() {
+    public int getAge() {
         return age;
     }
-    public Integer getBalance_amount() {
+    public int getBalance_amount() {
         return balance_amount;
     }
-    public Integer getPhone() {
+    public int getPhone() {
         return phone;
     }
     public String getEmpstatus() {
@@ -43,13 +43,13 @@ public class Pension {
     public void setName(String name) {
         this.name = name;
     }
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
-    public void setBalance_amount(Integer balance_amount) {
+    public void setBalance_amount(int balance_amount) {
         this.balance_amount = balance_amount;
     }
-    public void setPhone(Integer phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
     public void setEmpstatus(String empstatus) {
@@ -62,7 +62,7 @@ public class Pension {
         this.pensionmmyy = pensionmmyy;
     }
 
-    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyy) {
+    public Pension(int id, String name, int age, int balance_amount, int phone, String empstatus, String pensionStatus, String pensionmmyy) {
         this.id = id;
         this.name = name;
         this.age = age;
