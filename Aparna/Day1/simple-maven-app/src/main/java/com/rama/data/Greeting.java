@@ -1,5 +1,4 @@
-package com.kumar.data;
-
+package com.kumar.data
 public class Greeting {
 
   public String sayHello(){
@@ -15,3 +14,4 @@ public class Greeting {
     return "Thanks";
   }
 }
+
