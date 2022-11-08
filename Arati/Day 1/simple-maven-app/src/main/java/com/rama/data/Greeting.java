@@ -1,4 +1,4 @@
-package com.arati.data;
+package com.kumar.data;
 
 public class Greeting {
 
