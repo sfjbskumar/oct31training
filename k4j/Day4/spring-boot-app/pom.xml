@@ -15,7 +15,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<<<<<<< HEAD
+		<docker.image.prefix>navyasree200</docker.image.prefix>
+=======
 		<docker.image.prefix>kumar4javatraining</docker.image.prefix>
+>>>>>>> 9632345cf4b71e30dd88538d39d3233906c0c5f2
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,7 +42,8 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.6</version>
+				<version>1.4.13</version>
+
 				<configuration>
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
 					<buildArgs>
