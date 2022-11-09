@@ -14,7 +14,7 @@ public class StudentSecurity extends WebSecurityConfigurerAdapter {
         http.httpBasic().and().authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/save/student").hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.PUT, "/update/student").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.GET, "/get/student").hasAnyRole("ADMIN")
+              //  .antMatchers(HttpMethod.GET, "/get/student").hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/remove/student").hasAnyRole("ADMIN").and().csrf().disable().headers()
                 .frameOptions().disable();
     }
