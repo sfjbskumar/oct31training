@@ -1,5 +1,8 @@
 package com.example.Pension.Managment.System;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Pension {
 
     private int id;
@@ -10,6 +13,34 @@ public class Pension {
     private String PensionStatus;
     private String pensionmmyy;
     private int installment;
+
+    private String empStatus;
+
+    public Pension(){
+
+    }
+
+    public Pension(int id, String name, String age, int balanceAmount, int phoneNo, String pensionStatus, String pensionmmyy, int installment, String empStatus) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        BalanceAmount = balanceAmount;
+        this.phoneNo = phoneNo;
+        PensionStatus = pensionStatus;
+        this.pensionmmyy = pensionmmyy;
+        this.installment = installment;
+        this.empStatus = empStatus;
+    }
+
+    public String getEmpStatus() {
+        return empStatus;
+    }
+
+    public void setEmpStatus(String empStatus) {
+        this.empStatus = empStatus;
+    }
+
+
 
 
     public int getId() {
