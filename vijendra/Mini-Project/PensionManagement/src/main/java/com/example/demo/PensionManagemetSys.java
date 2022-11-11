@@ -1,9 +1,9 @@
-package com.example.PMS;
+package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class Pension {
+public class PensionManagemetSys {
    private int id;
     private  String name;
     private  String age;
@@ -15,12 +15,13 @@ public class Pension {
     private String  pensionmmyy;
     private int installment;
 
-    public Pension(){
+    public PensionManagemetSys(){
 
     }
 
 
-    public Pension(int id, String name, String age, int balanceamount, int phone, String empstatus, String pensionstatus, String pensionmmyy, int installment) {
+
+    public PensionManagemetSys(int id, String name, String age, int balanceamount, int phone, String empstatus, String pensionstatus, String pensionmmyy, int installment) {
         this.id = id;
         this.name = name;
         this.age = age;
