@@ -2,6 +2,9 @@ package com.example.pensionmanagementsystem.controller;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Entity;
+
+@Entity
 @Component
 public class Pension {
     private int id;
@@ -18,7 +21,7 @@ public class Pension {
 
     private String pensionStatus;
 
-    private String pensionmmyyy;
+    private String pensionmmyy;
 
     public int getId() {
         return id;
@@ -76,15 +79,15 @@ public class Pension {
         this.pensionStatus = pensionStatus;
     }
 
-    public String getPensionmmyyy() {
-        return pensionmmyyy;
+    public String getPensionmmyy() {
+        return pensionmmyy;
     }
 
-    public void setPensionmmyyy(String pensionmmyyy) {
-        this.pensionmmyyy = pensionmmyyy;
+    public void setPensionmmyy(String pensionmmyy) {
+        this.pensionmmyy = pensionmmyy;
     }
 
-    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyyy) {
+    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyy) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -92,8 +95,8 @@ public class Pension {
         this.phone = phone;
         this.empstatus = empstatus;
         this.pensionStatus = pensionStatus;
-        this.pensionmmyyy = pensionmmyyy;
+        this.pensionmmyy = pensionmmyy;
     }
     public Pension() {
     }
-    }
+}
