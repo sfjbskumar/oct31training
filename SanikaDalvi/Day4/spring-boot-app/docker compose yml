@@ -1,0 +1,6 @@
+version: '3.2'
+services:
+  sprig-boot-app:
+    image: sanika6212/spring-boot-app:latest
+    ports:
+      - "8082:8082"
