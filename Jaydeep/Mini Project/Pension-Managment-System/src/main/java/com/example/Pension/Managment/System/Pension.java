@@ -2,18 +2,35 @@ package com.example.Pension.Managment.System;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+//@Component
+@Entity
 public class Pension {
 
-    private int id;
-    private String name;
-    private String age;
-    private int BalanceAmount;
-    private int phoneNo;
-    private String PensionStatus;
-    private String pensionmmyy;
-    private int installment;
 
+    @Id
+    @GeneratedValue
+    @Column
+    private int id;
+    @Column
+    private String name;
+    @Column
+    private String age;
+    @Column
+    private  int BalanceAmount;
+    @Column
+    private int phoneNo;
+    @Column
+    private String PensionStatus;
+    @Column
+    private String pensionmmyy;
+    @Column
+    private int installment;
+    @Column
     private String empStatus;
 
     public Pension(){
@@ -24,9 +41,9 @@ public class Pension {
         this.id = id;
         this.name = name;
         this.age = age;
-        BalanceAmount = balanceAmount;
+        this.BalanceAmount = balanceAmount;
         this.phoneNo = phoneNo;
-        PensionStatus = pensionStatus;
+        this.PensionStatus = pensionStatus;
         this.pensionmmyy = pensionmmyy;
         this.installment = installment;
         this.empStatus = empStatus;

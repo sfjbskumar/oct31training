@@ -1,43 +1,58 @@
 package com.example.Pension.Managment.System;
 
-import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PensionController {
 
-    private Map<String,Pension> pensionMap= new HashMap<String,Pension>();
+    @Autowired
+    PensionRepository pensionRepository;
 
-    @GetMapping("/get/PensionName")
-    public Pension getName(@RequestParam String name){
-        Pension result= pensionMap.get(name);
-        return result;
+    // to create applicant in pension
+    @PostMapping("/create/applicant")
+    public @ResponseBody
+    String store(@RequestBody final Pension pension)
+    {
+        pensionRepository.save(pension);
+        return "saved";
     }
 
-    @GetMapping("/get/all")
-    public Map<String,Pension> getName(){
-        return pensionMap;
+    // to retrive by id
+    @GetMapping("/checkStatus/{id}")
+    public Pension checkStatus(@PathVariable int id)
+    {
+      return pensionRepository.findById(id).get();
+
     }
 
-    @PostMapping("save/PensionName")
-    public void SavePensionName(@RequestBody Pension pension){
-        String name= pension.getName();
-        pensionMap.put(name,pension);
+    @GetMapping("/checkBalance/{id}")
+    public Pension checkBalance(@PathVariable int id)
+    {
+
+        return pensionRepository.findById(id).get();
     }
-    @PutMapping("/update/PensionName")
-    public Pension updatePensionName(@RequestParam String name,@RequestParam int id){
-        Pension result= pensionMap.get(name);
-        result.setId(id);
-        pensionMap.put(name,result);
-        return result;
+
+    @GetMapping("/checkApplication/{id}")
+    public Pension getName(@PathVariable int id)
+    {
+      return pensionRepository.findById(id).get();
     }
 
 
-    @DeleteMapping("remove/PensionName")
-    public void deletePensionName(@RequestParam String name){
-        pensionMap.remove(name);
+    /*
+    @PutMapping("/update/PensionName/{id}")
+    public @ResponseBody Pension updatePensionName(@RequestBody Pension pension, @PathVariable int id){
+        Optional<Pension> pensionOptional=  pensionRepository.findById(id);
+        pension.setId(id);
+        pensionRepository.save(pension);
+        return pensionRepository.get();
+*/
+
+    @DeleteMapping("remove/PensionName/{id}")
+    public void deletePensionName(@PathVariable int id){
+        pensionRepository.deleteById(id);
     }
 
 

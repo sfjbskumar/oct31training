@@ -1,0 +1,6 @@
+version: '3.2'
+services:
+  sprig-boot-app:
+    image: kumar4javatraining/spring-boot-app:0.0.1
+    ports:
+      - "8080:8080"
