@@ -2,17 +2,33 @@ package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class PensionManagemetSys {
-   private int id;
-    private  String name;
-    private  String age;
-   private  int balanceamount ;
-    private int phone;
-    private String empstatus;
-    private String pensionstatus;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Component
+@Entity
+public class PensionManagemetSys {
+    @Id
+    @GeneratedValue
+    @Column
+    private int id;
+    @Column
+    private  String name;
+    @Column
+    private  String age;
+    @Column
+   private  int balanceamount ;
+    @Column
+    private int phone;
+    @Column
+    private String empstatus;
+    @Column
+    private String pensionstatus;
+    @Column
     private String  pensionmmyy;
+    @Column
     private int installment;
 
     public PensionManagemetSys(){
