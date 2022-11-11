@@ -3,7 +3,7 @@ package com.example.PMS;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PensionManagemetSys {
+public class Pension {
    private int id;
     private  String name;
     private  String age;
@@ -15,13 +15,13 @@ public class PensionManagemetSys {
     private String  pensionmmyy;
     private int installment;
 
-    public PensionManagemetSys(){
+    public Pension(){
 
     }
 
 
 
-    public PensionManagemetSys(int id, String name, String age, int balanceamount, int phone, String empstatus, String pensionstatus, String pensionmmyy, int installment) {
+    public Pension(int id, String name, String age, int balanceamount, int phone, String empstatus, String pensionstatus, String pensionmmyy, int installment) {
         this.id = id;
         this.name = name;
         this.age = age;

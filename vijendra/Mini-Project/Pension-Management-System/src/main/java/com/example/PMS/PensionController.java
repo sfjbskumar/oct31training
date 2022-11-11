@@ -7,27 +7,27 @@ import java.util.Map;
 
 @RestController
 public class PensionController {
-    private Map<String,PensionManagemetSys> PenMap= new HashMap<String,PensionManagemetSys>();
+    private Map<String, Pension> PenMap= new HashMap<String, Pension>();
 
     @GetMapping("/get/pension")
-    public PensionManagemetSys getPensionManagemetSys(@RequestParam String name){
-        PensionManagemetSys result= PenMap.get(name);
+    public Pension getPensionManagemetSys(@RequestParam String name){
+        Pension result= PenMap.get(name);
         return result;
     }
 
     @GetMapping("get/all")
-    public Map<String,PensionManagemetSys> getName(){
+    public Map<String, Pension> getName(){
         return PenMap;
     }
 
     @PostMapping("save/pension")
-    public void SavePensionManagemetSys(@RequestBody  PensionManagemetSys pen){
+    public void SavePensionManagemetSys(@RequestBody Pension pen){
         String name= pen.getName();
         PenMap.put(name,pen);
     }
     @PutMapping("update/pension")
-    public  PensionManagemetSys updateStudent(@RequestParam String name,@RequestParam Integer balanceamount){
-        PensionManagemetSys result= PenMap.get(name);
+    public Pension updateStudent(@RequestParam String name, @RequestParam Integer balanceamount){
+        Pension result= PenMap.get(name);
         result.setBalanceamount(balanceamount);
         PenMap.put(name,result);
         return result;
