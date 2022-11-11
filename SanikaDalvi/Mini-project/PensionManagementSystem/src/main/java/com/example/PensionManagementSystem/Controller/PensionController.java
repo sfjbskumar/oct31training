@@ -1,12 +1,18 @@
 package com.example.PensionManagementSystem.Controller;
 
+import com.example.PensionManagementSystem.PensionRepository;
 import com.example.PensionManagementSystem.model.Pension;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
 public class PensionController {
+
+    @Autowired
+    PensionRepository pensionRepository;
 
     private Map<String,Pension> PensionMap= new HashMap<String, Pension>();
 
@@ -17,14 +23,14 @@ public class PensionController {
     }
 
     @GetMapping("/get/all")
-    public Map<String,Pension> getAllUsers(){
-        return PensionMap;
+    public List<Pension> getName(){
+
+        return (List<Pension>) pensionRepository.findAll();
     }
 
     @PostMapping("save/pension")
     public void SavePensionUser(@RequestBody Pension pension){
-        String name= pension.getName();
-        PensionMap.put(name,pension);
+        pensionRepository.save(pension);
     }
 
     @GetMapping("hii")
