@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD:Naveen/Day2/.idea/compiler.xml
         <module name="demo" />
+=======
+>>>>>>> ebb5dc97dd8f57711325ee58ce00a7c01dd1d624:Falguni/Day1/simple-maven-app/.idea/compiler.xml
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
