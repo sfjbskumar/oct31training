@@ -1,10 +1,10 @@
-package com.example.pensionmanagement;
+package com.example.pensionmanagementsystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PensionManagementApplicationTests {
+class PensionManagementSystemApplicationTests {
 
 	@Test
 	void contextLoads() {

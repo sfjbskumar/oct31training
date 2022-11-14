@@ -1,13 +1,13 @@
-package com.example.pensionmanagement;
+package com.example.pensionmanagementsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PensionManagementApplication {
+public class PensionManagementSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PensionManagementApplication.class, args);
+		SpringApplication.run(PensionManagementSystemApplication.class, args);
 	}
 
 }

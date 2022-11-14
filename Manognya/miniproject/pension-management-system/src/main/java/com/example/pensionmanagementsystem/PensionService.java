@@ -1,4 +1,4 @@
-package com.example.pensionmanagement.service;
+package com.example.pensionmanagementsystem;
 
 import org.springframework.stereotype.Service;
 
