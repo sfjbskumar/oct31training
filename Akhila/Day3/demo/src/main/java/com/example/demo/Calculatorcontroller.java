@@ -19,7 +19,7 @@ public class Calculatorcontroller {
         return a*b;
     } @GetMapping("/div")
     public float division(@RequestParam(name = "a", required = true) float a,@RequestParam(name = "b", required = true) float b) {
-        return a/b;
+        return a*b;
     }
 
 
