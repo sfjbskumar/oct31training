@@ -7,5 +7,5 @@ Create simple maven project for hello world
 Create Project
 
 ```bash
-mvn archetype:generate -DgroupId=com.komali.data -DartifactId=first-maven-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.Komali.data -DartifactId=simple-maven-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```

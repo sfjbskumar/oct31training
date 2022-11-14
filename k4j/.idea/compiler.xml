@@ -6,11 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="first-spring-boot" />
         <module name="simple-maven-app" />
+        <module name="spring-calculator" />
+        <module name="spring-boot-rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="first-spring-boot" target="11" />
       <module name="simple-maven-app" target="1.8" />
+      <module name="spring-boot-rest" target="11" />
+      <module name="spring-calculator" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="first-spring-boot" options="-parameters" />
+      <module name="spring-boot-rest" options="-parameters" />
+      <module name="spring-calculator" options="-parameters" />
+    </option>
   </component>
 </project>
