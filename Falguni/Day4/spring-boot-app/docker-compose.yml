@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 version: '3.2'
 services:
   sprig-boot-app:
     image: falgunimohite/spring-boot-app:0.0.1
     ports:
+=======
+version: '3.2'
+services:
+  sprig-boot-app:
+    image: falgunimohite/spring-boot-app:0.0.1
+    ports:
+>>>>>>> e4fbf5beee5c498f6e26d1abd48d7de3240df450
       - "8080:8080"
