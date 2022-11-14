@@ -14,7 +14,7 @@ public class PensionSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/save/pension").hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/create/applicant").hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.PUT, "/update/pension").hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/remove/pension").hasAnyRole("ADMIN").and().csrf().disable().headers()
                 .frameOptions().disable();

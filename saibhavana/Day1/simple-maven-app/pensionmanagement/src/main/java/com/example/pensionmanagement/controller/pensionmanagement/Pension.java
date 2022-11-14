@@ -3,11 +3,12 @@ package com.example.pensionmanagement.controller.pensionmanagement;
 public class Pension {
     private int id;
     private String name;
+    private String age;
     private Integer balance_amount;
     private Integer phone;
     private String empstatus;
-    private String pensionStatus;
-    private String pensionmmyyy;
+    private String pensionstatus;
+    private String pensionmmyy;
     private Integer installment;
 
     public int getId() {
@@ -24,6 +25,14 @@ public class Pension {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public Integer getBalance_amount() {
@@ -50,20 +59,20 @@ public class Pension {
         this.empstatus = empstatus;
     }
 
-    public String getPensionStatus() {
-        return pensionStatus;
+    public String getPensionstatus() {
+        return pensionstatus;
     }
 
-    public void setPensionStatus(String pensionStatus) {
-        this.pensionStatus = pensionStatus;
+    public void setPensionstatus(String pensionstatus) {
+        this.pensionstatus = pensionstatus;
     }
 
-    public String getPensionmmyyy() {
-        return pensionmmyyy;
+    public String getPensionmmyy() {
+        return pensionmmyy;
     }
 
-    public void setPensionmmyyy(String pensionmmyyy) {
-        this.pensionmmyyy = pensionmmyyy;
+    public void setPensionmmyy(String pensionmmyy) {
+        this.pensionmmyy = pensionmmyy;
     }
 
     public Integer getInstallment() {
@@ -74,15 +83,15 @@ public class Pension {
         this.installment = installment;
     }
 
-    public Pension(int id, String name, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyyy, Integer installment) {
+    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionstatus, String pensionmmyy, Integer installment) {
         this.id = id;
         this.name = name;
+        this.age = age;
         this.balance_amount = balance_amount;
         this.phone = phone;
         this.empstatus = empstatus;
-        this.pensionStatus = pensionStatus;
-        this.pensionmmyyy = pensionmmyyy;
+        this.pensionstatus = pensionstatus;
+        this.pensionmmyy = pensionmmyy;
         this.installment = installment;
     }
-
 }
