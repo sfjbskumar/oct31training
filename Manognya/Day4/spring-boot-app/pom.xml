@@ -15,11 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<<<<<<< HEAD
-		<docker.image.prefix>navyasree200</docker.image.prefix>
-=======
-		<docker.image.prefix>kumar4javatraining</docker.image.prefix>
->>>>>>> 9632345cf4b71e30dd88538d39d3233906c0c5f2
+		<docker.image.prefix>manognya08</docker.image.prefix>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

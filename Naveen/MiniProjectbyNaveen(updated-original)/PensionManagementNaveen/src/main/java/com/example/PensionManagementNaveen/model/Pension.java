@@ -2,23 +2,63 @@ package com.example.PensionManagementNaveen.model;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+//@Component
+@Entity
 public class Pension {
+
+
+    @Id
+    @GeneratedValue
+    @Column
     private int id;
-
+    @Column
     private String name;
-
+    @Column
     private String age;
+    @Column
+    private  int BalanceAmount;
+    @Column
+    private int phoneNo;
+    @Column
+    private String PensionStatus;
+    @Column
+    private String pensionmmyy;
+    @Column
+    private int installment;
+    @Column
+    private String empStatus;
 
-    private Integer balance_amount;
+    public Pension(){
 
-    private Integer phone;
+    }
 
-    private String empstatus;
+    public Pension(int id, String name, String age, int balanceAmount, int phoneNo, String pensionStatus, String pensionmmyy, int installment, String empStatus) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.BalanceAmount = balanceAmount;
+        this.phoneNo = phoneNo;
+        this.PensionStatus = pensionStatus;
+        this.pensionmmyy = pensionmmyy;
+        this.installment = installment;
+        this.empStatus = empStatus;
+    }
 
-    private String pensionStatus;
+    public String getEmpStatus() {
+        return empStatus;
+    }
 
-    private String pensionmmyyy;
+    public void setEmpStatus(String empStatus) {
+        this.empStatus = empStatus;
+    }
+
+
+
 
     public int getId() {
         return id;
@@ -44,58 +84,43 @@ public class Pension {
         this.age = age;
     }
 
-    public Integer getBalance_amount() {
-        return balance_amount;
+    public int getBalanceAmount() {
+        return BalanceAmount;
     }
 
-    public void setBalance_amount(Integer balance_amount) {
-        this.balance_amount = balance_amount;
+    public void setBalanceAmount(int balanceAmount) {
+        BalanceAmount = balanceAmount;
     }
 
-    public Integer getPhone() {
-        return phone;
+    public int getPhoneNo() {
+        return phoneNo;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
-    }
-
-    public String getEmpstatus() {
-        return empstatus;
-    }
-
-    public void setEmpstatus(String empstatus) {
-        this.empstatus = empstatus;
+    public void setPhoneNo(int phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
     public String getPensionStatus() {
-        return pensionStatus;
+        return PensionStatus;
     }
 
     public void setPensionStatus(String pensionStatus) {
-        this.pensionStatus = pensionStatus;
+        PensionStatus = pensionStatus;
     }
 
-    public String getPensionmmyyy() {
-        return pensionmmyyy;
+    public String getPensionmmyy() {
+        return pensionmmyy;
     }
 
-    public void setPensionmmyyy(String pensionmmyyy) {
-        this.pensionmmyyy = pensionmmyyy;
+    public void setPensionmmyy(String pensionmmyy) {
+        this.pensionmmyy = pensionmmyy;
     }
 
-    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyyy) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.balance_amount = balance_amount;
-        this.phone = phone;
-        this.empstatus = empstatus;
-        this.pensionStatus = pensionStatus;
-        this.pensionmmyyy = pensionmmyyy;
+    public int getInstallment() {
+        return installment;
     }
-    public Pension()
-    {
 
+    public void setInstallment(int installment) {
+        this.installment = installment;
     }
 }

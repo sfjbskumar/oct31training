@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public  class CalculatorController {
 
-    @GetMapping("/add")
+    @GetMapping("/")
+    public String hello() {
+        return "<h1>Hello Saurbh</h1>";
+    }
 
+    @GetMapping("/add")
     public float addition(@RequestParam(name = "a", required = true) float a,@RequestParam(name = "b", required = true) float b) {
         return a+b;
     }

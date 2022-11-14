@@ -1,54 +1,54 @@
-package com.example.PensionManagementNaveen.controller;
+ package com.example.PensionManagementNaveen.controller;
 
+import com.example.PensionManagementNaveen.PensionManagementNaveenApplication;
 import com.example.PensionManagementNaveen.model.Pension;
+
+import com.example.PensionManagementNaveen.repository.PensionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+
+
 @RestController
 public class PensionController {
-    private Map<String,Pension> pensionMap= new HashMap<>();
+    @Autowired
+    PensionRepository pensionRepository;
 
 
-
-    @GetMapping("/get/PensionUserName")
-    public Pension getUserByName(@RequestParam String name){
-        Pension result= pensionMap.get(name);
-        return result;
-    }
-
-
-
-    @GetMapping("/get/all")
-    public Map<String,Pension> getAllUsers(){
-        return pensionMap;
-    }
-
-
-
-    @PostMapping("save/pension")
-    public void SavePensionUser(@RequestBody Pension pension){
-        String name= pension.getName();
-        pensionMap.put(name,pension);
-    }
-    @PutMapping("update/pension")
-    public Pension updatePensionUser(@RequestParam String name,@RequestParam Integer balance_amount){
-        Pension result= pensionMap.get(name);
-        result.setBalance_amount(balance_amount);
-        pensionMap.put(name,result);
-        return result;
-
-
-
-    }
-    @DeleteMapping("remove/pension")
-    public void removePensionUser(@RequestParam String name){
-        pensionMap.remove(name);
-    }
-
-    @GetMapping("/hi")
-    public String sayhi()
+    @PostMapping("/create/applicant")
+    public @ResponseBody
+    String store(@RequestBody final Pension pension)
     {
-        return "hi naveen";
+        pensionRepository.save(pension);
+        return "saved";
     }
+    @GetMapping("/checkStatus/{id}")
+    public Pension checkStatus(@PathVariable int id)
+    {
+        return pensionRepository.findById(id).get();
+
+    }
+    @GetMapping("/checkBalance/{id}")
+    public Pension checkBalance(@PathVariable int id)
+    {
+
+        return pensionRepository.findById(id).get();
+    }
+    @GetMapping("/checkApplication/{id}")
+    public Pension getName(@PathVariable int id)
+    {
+        return pensionRepository.findById(id).get();
+    }
+    @DeleteMapping("remove/PensionName/{id}")
+    public void deletePensionName(@PathVariable int id){
+        pensionRepository.deleteById(id);
+    }
+
+
+    @GetMapping("hii")
+    public String sayHi(){
+        return "Hello Naveen";
+    }
+
+
 }
