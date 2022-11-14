@@ -1,23 +1,41 @@
 package com.example.pensionmanagement.model;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Pension {
+    @Id
+    @GeneratedValue
+    @Column
     private int id;
 
+    @Column
     private String name;
 
+    @Column
     private String age;
 
+    @Column
     private Integer balance_amount;
 
+    @Column
     private Integer phone;
 
+   @Column
     private String empstatus;
 
-    private String pensionStatus;
+   @Column
+   private String pensionStatus;
 
-    private String pensionmmyyy;
+   @Column
+   private String pensionmmyyy;
 
-    private float installment;
+   @Column
+   private float installment;
 
     public int getId() {
         return id;
