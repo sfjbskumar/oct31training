@@ -1,0 +1,34 @@
+Create a calculator springboot microservice from spring.io
+spring-boot-calculator
+
+Create Controller class Calculate
+
+@RestController
+public class Calculate{
+
+@Getmapping(/add)
+public float addition(){
+     return 5;
+}
+
+@Getmapping(/sub)
+public float subtraction(){
+   return 3;
+}
+@Getmapping(/mul)
+public float multiplication(){
+ return 12
+}
+@Getmapping(/div)
+public float division(){
+
+return 4;
+}
+
+test it with browser
+test with postman
+test with curl
+
+
+Marks: 5marks
+

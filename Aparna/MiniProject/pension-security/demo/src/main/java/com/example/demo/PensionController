@@ -1,0 +1,34 @@
+package com.example.demo;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PensionController{
+    private Map<String,Pension> pensionMap=new HashMap<>();
+
+    @GetMapping("/get/pension")
+        public Student getPensioner(@RequestParam String name){
+            Pension result= pensionMap.get(name);
+            return result;
+        }
+    @GetMapping("/getAll")
+    private List<Pension> getAllDetails(){
+    return pensionService.getAllDetails();
+    }
+    @PostMapping("save/pension")
+    public void savePensionUser(@RequestBody Pension pension){
+    String name=pension.getName();
+    pensionMap.put(name,pension);
+    }
+    @PutMapping("update/pension")
+    public Pension updatePension(@RequestParam String name,@RequestParam Integer bslsnce_amount){
+    Pension result=pensionMap.get(name);
+    result.setBalance_amount(balance_amount);
+    pensionMap.put(name,result);
+    return result;
+    }
+    @DeleteMapping("remove/pension")
+    public void removePensionUser(@RequestParam String name){
+      pensionMap.remove(name);
+    }
+
+}

@@ -1,14 +1,33 @@
 package com.example.PensionManagementSystem.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Pension {
+    @Id
+    @GeneratedValue
+    @Column
     private int id;
+    @Column
     private String name;
-    private String age;
-    private Integer balance_amount;
-    private Integer phone;
+    @Column
+    private int age;
+    @Column
+    private int balanceamount;
+    @Column
+    private String phone;
+    @Column
     private String empstatus;
+    @Column
     private String pensionStatus;
+    @Column
     private String pensionmmyy;
+    @Column
+    private int installment;
+
 
 
     public int getId() {
@@ -17,13 +36,13 @@ public class Pension {
     public String getName() {
         return name;
     }
-    public String getAge() {
+    public int getAge() {
         return age;
     }
-    public Integer getBalance_amount() {
-        return balance_amount;
+    public int getBalanceamount() {
+        return balanceamount;
     }
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
     public String getEmpstatus() {
@@ -35,6 +54,9 @@ public class Pension {
     public String getPensionmmyy() {
         return pensionmmyy;
     }
+    public int getInstallment(){
+        return installment;
+    }
 
 
     public void setId(int id) {
@@ -43,13 +65,13 @@ public class Pension {
     public void setName(String name) {
         this.name = name;
     }
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
-    public void setBalance_amount(Integer balance_amount) {
-        this.balance_amount = balance_amount;
+    public void setBalanceamount(int balanceamount) {
+        this.balanceamount = balanceamount;
     }
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public void setEmpstatus(String empstatus) {
@@ -61,15 +83,21 @@ public class Pension {
     public void setPensionmmyy(String pensionmmyy) {
         this.pensionmmyy = pensionmmyy;
     }
+    public void setInstallment(int installment){
+        this.installment = installment;
+    }
+public Pension(){
 
-    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyy) {
+}
+    public Pension(int id, String name, int age, int balanceamount, String phone, String empstatus, String pensionStatus, String pensionmmyy, int installment) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.balance_amount = balance_amount;
+        this.balanceamount = balanceamount;
         this.phone = phone;
         this.empstatus = empstatus;
         this.pensionStatus = pensionStatus;
         this.pensionmmyy = pensionmmyy;
+        this.installment = installment;
     }
 }
