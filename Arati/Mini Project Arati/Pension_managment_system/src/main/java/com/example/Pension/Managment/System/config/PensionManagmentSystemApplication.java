@@ -1,13 +1,13 @@
-package com.example.Pension-management-arati;
+package com.example.Pension.Managment.System.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PensionmanagementaratiApplication {
+public class PensionManagmentSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PensionmanagementaratiApplication.class, args);
+        SpringApplication.run(PensionManagmentSystemApplication.class, args);
     }
 
 }
