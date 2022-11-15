@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<<< HEAD:pravalika/Day1/simple-maven-app/.idea/modules.xml
       <module fileurl="file://$PROJECT_DIR$/.idea/simple-maven-app.iml" filepath="$PROJECT_DIR$/.idea/simple-maven-app.iml" />
+========
+      <module fileurl="file://$PROJECT_DIR$/spring-calculator.iml" filepath="$PROJECT_DIR$/spring-calculator.iml" />
+>>>>>>>> origin/main:k4j/Day3/spring-calculator/.idea/modules.xml
     </modules>
   </component>
 </project>
