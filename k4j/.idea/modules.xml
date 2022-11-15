@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Day2/first-spring-boot/first-spring-boot.iml" filepath="$PROJECT_DIR$/Day2/first-spring-boot/first-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/k4j.iml" filepath="$PROJECT_DIR$/.idea/k4j.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day1/simple-maven-app/simple-maven-app.iml" filepath="$PROJECT_DIR$/Day1/simple-maven-app/simple-maven-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day3/spring-boot-rest/spring-boot-rest.iml" filepath="$PROJECT_DIR$/Day3/spring-boot-rest/spring-boot-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day3/spring-calculator/spring-calculator.iml" filepath="$PROJECT_DIR$/Day3/spring-calculator/spring-calculator.iml" />
+    </modules>
+  </component>
+</project>

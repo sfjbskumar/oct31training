@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Day8.iml" filepath="$PROJECT_DIR$/.idea/Day8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-app/eureka-app.iml" filepath="$PROJECT_DIR$/eureka-app/eureka-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-app/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-app/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-app/school-service/school-service.iml" filepath="$PROJECT_DIR$/eureka-app/school-service/school-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-rest-communication/spring-caller/spring-caller.iml" filepath="$PROJECT_DIR$/spring-rest-communication/spring-caller/spring-caller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-rest-communication/spring-receiver/spring-receiver.iml" filepath="$PROJECT_DIR$/spring-rest-communication/spring-receiver/spring-receiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-rest-communication/spring-rest-communication.iml" filepath="$PROJECT_DIR$/spring-rest-communication/spring-rest-communication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-app/student-service/student-service.iml" filepath="$PROJECT_DIR$/eureka-app/student-service/student-service.iml" />
+    </modules>
+  </component>
+</project>
