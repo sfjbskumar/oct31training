@@ -40,7 +40,7 @@ public class PensionController {
       return pensionService.checkApplication(id);
     }
 
-  /*  @GetMapping("/issuePension")
+    @GetMapping("/issuePension")
     public void issuePension()
     {
         pensionService.issuePension();
@@ -50,7 +50,7 @@ public class PensionController {
     {
          pensionService.loadPension();
     }
-*/
+
 
 
 
