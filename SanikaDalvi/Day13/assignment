@@ -1,0 +1,8 @@
+Send patient data
+
+Post request in body data.
+
+name
+id
+hospital
+disease
