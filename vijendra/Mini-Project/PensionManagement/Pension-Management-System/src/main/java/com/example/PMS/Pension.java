@@ -1,18 +1,13 @@
-package com.example.demo.service;
-
-import org.springframework.stereotype.Component;
-
+package com.example.demo;
+import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Component
-@Entity
+@Entity(name="pensiondetails")
+@Table(name="pensiondetails")
 public class Pension {
     @Id
-    @GeneratedValue
-    @Column
     private int id;
     @Column
     private  String name;
@@ -34,7 +29,6 @@ public class Pension {
     public Pension(){
 
     }
-
 
 
     public Pension(int id, String name, String age, int balanceamount, int phone, String empstatus, String pensionstatus, String pensionmmyy, int installment) {
