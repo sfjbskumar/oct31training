@@ -8,7 +8,7 @@ public class DemoDocker {
 
 @GetMapping("/Hi")
     public String sayHi(){
-    return "Hello";
+    return "Hello Docker";
 }
 }
 
