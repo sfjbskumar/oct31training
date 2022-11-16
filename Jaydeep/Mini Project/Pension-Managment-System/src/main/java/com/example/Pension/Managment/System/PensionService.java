@@ -3,10 +3,14 @@ package com.example.Pension.Managment.System;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
+@Transactional
 public class PensionService {
     @Autowired
     PensionRepository pensionRepository;
@@ -30,8 +34,8 @@ public class PensionService {
     {
         Pension pension=new Pension();
         pension = pensionRepository.findById(id).get();
-        pension.getBalanceAmount();
-        return "Employee Balance is:-"+pension.getBalanceAmount();
+        pension.getBalance();
+        return "Employee Balance is:-"+pension.getBalance();
     }
     public String checkApplication(int id)
     {
@@ -39,34 +43,72 @@ public class PensionService {
       pension = pensionRepository.findById(id).get();
         pension.getId();
         pension.getName();
-        pension.getPhoneNo();
+        pension.getMobile();
         pension.getAge();
-        pension.getBalanceAmount();
+        pension.getBalance();
         pension.getPensionStatus();
         pension.getEmpStatus();
-        pension.getPensionmmyy();
+        pension.getPensionMMYY();
         pension.getInstallment();
         return "Employee Id:-"+pension.getId() +
                 "\nEmployee Name:-"+pension.getName()+
-                "\nEmployee PhoneNo:-"+pension.getPhoneNo()
+                "\nEmployee PhoneNo:-"+pension.getMobile()
                 +"\nEmployee Age:-"+pension.getAge()+
-                "\nEmployee Balance:-"+pension.getBalanceAmount()
+                "\nEmployee Balance:-"+pension.getBalance()
                 +"\nEmployee Pension Status:-"+pension.getPensionStatus()
                 +"\nEmployee Installment:-"+pension.getInstallment()
-                +"\nEmployee Pension month:-"+pension.getPensionmmyy();
+                +"\nEmployee Pension month:-"+pension.getPensionMMYY();
 
         //return "Employee details :-" + pensionRepository.findById(id).get();
 
     }
 
- /*   public void issuePension() {
-        pensionRepository.issuePension("R","Y", "1122", "1022");
+    //issuePension to all applicants with empStatus R and PensionStatus Y
+    public void issuePension(){
+        //current MMYY
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMyy");
+        String currentMMYY = simpleDateFormat.format(new Date());
+
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+        String currentMonth=monthFormat.format(new Date());
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yy");
+        String currentYear=yearFormat.format(new Date());
+
+        //previous MMYY
+        int prevMonth = Integer.parseInt(currentMonth)-1;
+        String previousMMYY = String.valueOf(prevMonth)+currentYear;
+        if(previousMMYY.length()==3){
+            previousMMYY = "0"+previousMMYY;
+        }
+
+
+
+
+
+        pensionRepository.issuePension("R","Y", currentMMYY, previousMMYY);
     }
 
-    public void loadPension() {
-        pensionRepository.loadPension("A","N", "1122","1022");
+    //loadPension to all applicants with empStatus A and PensionStatus N
+    public void loadPension(){
+        //current MMYY
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMyy");
+        String currentMMYY = simpleDateFormat.format(new Date());
+
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+        String currentMonth=monthFormat.format(new Date());
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yy");
+        String currentYear=yearFormat.format(new Date());
+
+        //previous MMYY
+        int prevMonth = Integer.parseInt(currentMonth)-1;
+        String previousMMYY = String.valueOf(prevMonth)+currentYear;
+        if(previousMMYY.length()==3){
+            previousMMYY = "0"+previousMMYY;
+        }
+
+        pensionRepository.loadPension("A","N", currentMMYY, previousMMYY);
     }
 
-  */
+
 
 }
