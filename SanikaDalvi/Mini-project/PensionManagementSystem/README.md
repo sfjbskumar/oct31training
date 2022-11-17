@@ -7,8 +7,11 @@ This project is generated with Java spring-boot.
 https://start.spring.io/
 ```
 1.Using Spring Intilizr project structure is created by adding required dependencies, plugins, and versions
+
 2.Download and Extract zip file
+
 3.open extracted file in Intellij
+
 4.Write required classes and methods
 
 # Build the project
