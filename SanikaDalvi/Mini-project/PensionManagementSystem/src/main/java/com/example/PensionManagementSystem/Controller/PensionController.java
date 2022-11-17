@@ -25,8 +25,8 @@ public class PensionController {
     // Create new applicant for pension management by admin
     @PostMapping("/create/applicant")
     public @ResponseBody
-    String store(@RequestBody final Pension pension) {
-
+    Pension store(@RequestBody final Pension pension)
+    {
         return pensionService.save(pension);
     }
 
@@ -40,11 +40,16 @@ public class PensionController {
 
 
     // Check application of particular applicant by id
-    @GetMapping("checkApplication/{id}")
+    @GetMapping("/checkApplication/{id}")
+    public Pension getApplicant(@PathVariable("id") int id)
+    {
+        return pensionService.getApplicantById(id);
+    }
+    /*@GetMapping("checkApplication/{id}")
     public String checkApplication(@PathVariable int id) {
 
         return pensionService.checkApplication(id);
-    }
+    }*/
 
 
     // Check status of particular applicant by id
@@ -55,7 +60,7 @@ public class PensionController {
     }
 
 
-    // Issue pension of applicant if applicant is eligible
+    // Issue pension of applicant if applicant is eligible by admin
     @GetMapping("/issuePension")
     public void issuePension() {
         pensionService.issuePension();
@@ -63,7 +68,7 @@ public class PensionController {
     }
 
 
-    // Load pension of applicant if applicant is eligible
+    // Load pension of applicant if applicant is eligible by admin
     @GetMapping("/loadPension")
     public void loadPension() {
         pensionService.loadPension();
