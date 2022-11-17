@@ -41,7 +41,7 @@ public class PensionController {
     @GetMapping("/hi")
     public String sayhi()
     {
-        return "hi Ravi";
+        return "hi";
     }
 
 

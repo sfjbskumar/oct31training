@@ -1,21 +1,41 @@
 package com.example.pensionManagementSystem.model;
 
+
+import org.hibernate.annotations.Columns;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+@Component
 public class Pension {
 
+
+   @Id
+   @Column
     private int id;
 
-    private String name;
+   @Column
+   private String name;
 
+    @Column
     private String age;
 
+    @Column
     private Integer balance_amount;
 
+    @Column
     private Integer phone;
 
+    @Column
     private String empstatus;
 
+    @Column
     private String pensionStatus;
 
+    @Column
     private String pensionmmyyy;
 
     public int getId() {
@@ -92,6 +112,9 @@ public class Pension {
         this.pensionStatus = pensionStatus;
         this.pensionmmyyy = pensionmmyyy;
 
+
+    }
+    public Pension(){
 
     }
 }
