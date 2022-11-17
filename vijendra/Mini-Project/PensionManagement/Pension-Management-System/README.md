@@ -39,7 +39,7 @@ Step 5:-
 # 1.Creating Applicant (Admin's operation)
 POST 
 ``` 
-http://localhost:8082/create/applicant
+http://localhost:8080/create/applicant
 ``` 
 Authorization(Need because we gave this operation as admin role):-
 ``` 
@@ -67,7 +67,7 @@ Body:
 # 4.Issue Pensions for all Retired employees (Admin's operation)
 POST
 ``` 
-http://localhost:8082/issuePension
+http://localhost:8080/issuePension
 ``` 
 Authorization(Need because we gave this operation as admin role):-
 ``` 
@@ -79,7 +79,7 @@ Password:-password
 # 5.Load Pensions for all Active employees (Admin's operation)
 POST
 ``` 
-http://localhost:8082/loadPension
+http://localhost:8080/loadPension
 ``` 
 Authorization(Need because we gave this operation as admin role):-
 ``` 
@@ -90,14 +90,14 @@ Password:-password
 # 6. Check Balance (User's operation)
 GET 
 ``` 
-http://localhost:8082/checkBalance/107
+http://localhost:8080/checkBalance/107
 ``` 
 
 
 # 7. Check Status (User's operation)
 GET
 ``` 
-http://localhost:8082/checkStatus/107
+http://localhost:8080/checkStatus/107
 ``` 
 
 
@@ -105,7 +105,7 @@ http://localhost:8082/checkStatus/107
 
 GET
 ``` 
-http://localhost:8082/checkApplication/107
+http://localhost:8080/checkApplication/107
 ``` 
 
 Step 6:-
@@ -114,4 +114,3 @@ Step 6:-
 ``` 
 mvn install dockerfile:build
 ```
-
