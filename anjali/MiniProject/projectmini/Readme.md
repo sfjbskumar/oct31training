@@ -5,17 +5,11 @@ After addding this we get Maven to load, now to build the project run 'mvn clean
 For performing the testing on application we use localhost:portnumber(8080/8081,etc) either write this on browser or on POSTMAN.
 
 
-Build the project
+Build the project: mvn clean install
 
-mvn clean install
+Run application: mvn spring-boot:run
 
-Run application
-
-mvn spring-boot:run
-
-Testing the application
-
-using POSTMAN or BROSWER
+Testing the application: using POSTMAN or BROSWER
 
 1.Creating Applicant (Admin's operation)
 POST
