@@ -34,4 +34,5 @@ public interface PensionRepository extends JpaRepository<Pension, Integer>
    /* @Modifying
     @Query("update pensiondetails pd set pd.pensionStatus=?1 where pd.id=?2")
     void approveApplication(String pensionStatus, int id);*/
+
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Mini Project.iml" filepath="$PROJECT_DIR$/.idea/Mini Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Pension-Managment-System/pension-managment-system.iml" filepath="$PROJECT_DIR$/Pension-Managment-System/pension-managment-system.iml" />
-    </modules>
-  </component>
-</project>
