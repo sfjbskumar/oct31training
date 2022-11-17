@@ -3,19 +3,21 @@ package com.example.Pension.Managment.System;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service
+@Transactional
 public class PensionService {
     @Autowired
     PensionRepository pensionRepository;
 
 
-    public String save(Pension pension)
+    public Pension save(Pension pension)
     {
-        pensionRepository.save(pension);
-        return "saved";
+       return  pensionRepository.save(pension);
+
     }
     public String checkStatus(int id)
     {
@@ -30,43 +32,59 @@ public class PensionService {
     {
         Pension pension=new Pension();
         pension = pensionRepository.findById(id).get();
-        pension.getBalanceAmount();
-        return "Employee Balance is:-"+pension.getBalanceAmount();
-    }
-    public String checkApplication(int id)
-    {
-        Pension pension=new Pension();
-      pension = pensionRepository.findById(id).get();
-        pension.getId();
-        pension.getName();
-        pension.getPhoneNo();
-        pension.getAge();
-        pension.getBalanceAmount();
-        pension.getPensionStatus();
-        pension.getEmpStatus();
-        pension.getPensionmmyy();
-        pension.getInstallment();
-        return "Employee Id:-"+pension.getId() +
-                "\nEmployee Name:-"+pension.getName()+
-                "\nEmployee PhoneNo:-"+pension.getPhoneNo()
-                +"\nEmployee Age:-"+pension.getAge()+
-                "\nEmployee Balance:-"+pension.getBalanceAmount()
-                +"\nEmployee Pension Status:-"+pension.getPensionStatus()
-                +"\nEmployee Installment:-"+pension.getInstallment()
-                +"\nEmployee Pension month:-"+pension.getPensionmmyy();
-
-        //return "Employee details :-" + pensionRepository.findById(id).get();
-
+        pension.getBalance();
+        return "Employee Balance is:-"+pension.getBalance();
     }
 
- /*   public void issuePension() {
-        pensionRepository.issuePension("R","Y", "1122", "1022");
+   public Pension getApplicantById(int id)
+   {
+       return pensionRepository.findById(id).get();
+   }
+
+    //issuePension to all applicants with empStatus R and PensionStatus Y
+    public void issuePension(){
+        //current MMYY
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMyy");
+        String currentMMYY = simpleDateFormat.format(new Date());
+
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+        String currentMonth=monthFormat.format(new Date());
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yy");
+        String currentYear=yearFormat.format(new Date());
+
+        //previous MMYY
+        int prevMonth = Integer.parseInt(currentMonth)-1;
+        String previousMMYY = String.valueOf(prevMonth)+currentYear;
+        if(previousMMYY.length()==3){
+            previousMMYY = "0"+previousMMYY;
+        }
+
+
+        pensionRepository.issuePension("R","Y", currentMMYY, previousMMYY);
     }
 
-    public void loadPension() {
-        pensionRepository.loadPension("A","N", "1122","1022");
+
+    //loadPension to all applicants with empStatus A and PensionStatus N
+    public void loadPension(){
+        //current MMYY
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMyy");
+        String currentMMYY = simpleDateFormat.format(new Date());
+
+        SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+        String currentMonth=monthFormat.format(new Date());
+        SimpleDateFormat yearFormat = new SimpleDateFormat("yy");
+        String currentYear=yearFormat.format(new Date());
+
+        //previous MMYY
+        int prevMonth = Integer.parseInt(currentMonth)-1;
+        String previousMMYY = String.valueOf(prevMonth)+currentYear;
+        if(previousMMYY.length()==3){
+            previousMMYY = "0"+previousMMYY;
+        }
+
+        pensionRepository.loadPension("A","N", currentMMYY, previousMMYY);
     }
 
-  */
+
 
 }
