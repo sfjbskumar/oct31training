@@ -1,6 +1,6 @@
 Step 1:-
 
-# Create project
+##create project
 ```
 1.Using Spring Intilizer(by giving all requirement we need like version of java,maven, dependecny etc.)
 2.Download zip file of that requirment given
