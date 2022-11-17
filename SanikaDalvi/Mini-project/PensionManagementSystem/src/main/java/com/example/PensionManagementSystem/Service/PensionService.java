@@ -15,12 +15,16 @@ public class PensionService {
     @Autowired
     PensionRepository pensionRepository;
 
-    public String save(Pension pension)
+    /*public String save(Pension pension)
     {
         pensionRepository.save(pension);
         return "saved";
-    }
+    }*/
+    public Pension save(Pension pension)
+    {
+        return  pensionRepository.save(pension);
 
+    }
 
     public String checkStatus(int id) {
         Pension pension=new Pension();
@@ -39,7 +43,11 @@ public class PensionService {
     }
 
 
-    public String checkApplication(int id) {
+    public Pension getApplicantById(int id)
+    {
+        return pensionRepository.findById(id).get();
+    }
+    /*public String checkApplication(int id) {
         Pension pension=new Pension();
         pension = pensionRepository.findById(id).get();
         pension.getId();
@@ -59,7 +67,7 @@ public class PensionService {
                 +"\nEmployee Pension Status:-"+pension.getPensionStatus()
                 +"\nEmployee Installment:-"+pension.getInstallment()
                 +"\nEmployee Pension month:-"+pension.getPensionMMYY();
-    }
+    }*/
 
     //issuePension to all applicants with empStatus R and PensionStatus Y
     public void issuePension() {
