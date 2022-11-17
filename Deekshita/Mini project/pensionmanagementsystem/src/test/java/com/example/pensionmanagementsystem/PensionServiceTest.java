@@ -29,10 +29,10 @@ class PensionServiceTest{
     void testsave(){
 
         Pension p = new Pension();
-        p.setId(201);
-        p.setName("jaydeep");
-        p.setAge(22);
-        p.setBalance(90000);
+        p.setId(200);
+        p.setName("Deekshita");
+        p.setAge(21);
+        p.setBalance(10000);
         p.setMobile("9988776655");
         p.setEmpStatus("A");
         p.setPensionStatus("N");
@@ -45,11 +45,11 @@ class PensionServiceTest{
 
     @Test
     void testGetStatus(){
-        int id=201;
+        int id=200;
         Pension p = new Pension();
         p.setId(id);
-        p.setName("jaydeep");
-        p.setAge(21);
+        p.setName("Deekshita");
+        p.setAge(22);
         p.setBalance(80000);
         p.setMobile("9988776655");
         p.setEmpStatus("A");
@@ -69,9 +69,9 @@ class PensionServiceTest{
         int id=201;
         Pension pensionBuilder = new Pension();
         pensionBuilder.setId(id);
-        pensionBuilder.setName("jaydeep");
-        pensionBuilder.setAge(21);
-        pensionBuilder.setBalance(80000);
+        pensionBuilder.setName("Deekshita");
+        pensionBuilder.setAge(22);
+        pensionBuilder.setBalance(10000);
         pensionBuilder.setMobile("9988776655");
         pensionBuilder.setEmpStatus("A");
         pensionBuilder.setPensionStatus("N");
