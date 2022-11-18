@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" ?>
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+>>>>>>> e4fbf5beee5c498f6e26d1abd48d7de3240df450
 <testsuite tests="4" failures="0" name="com.kumar.data.GreetingTest" time="0.012" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -21,7 +25,11 @@
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\sfjbs\AppData\Local\Temp\"/>
+<<<<<<< HEAD
     <property name="line.separator" value="
+=======
+    <property name="line.separator" value="
+>>>>>>> e4fbf5beee5c498f6e26d1abd48d7de3240df450
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>

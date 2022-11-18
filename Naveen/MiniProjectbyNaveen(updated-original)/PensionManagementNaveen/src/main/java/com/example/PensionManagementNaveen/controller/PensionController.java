@@ -1,54 +1,57 @@
-package com.example.PensionManagementNaveen.controller;
-
+ package com.example.PensionManagementNaveen.controller;
 import com.example.PensionManagementNaveen.model.Pension;
+import com.example.PensionManagementNaveen.repository.PensionRepository;
+import com.example.PensionManagementNaveen.service.PensionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
 @RestController
 public class PensionController {
-    private Map<String,Pension> pensionMap= new HashMap<>();
 
+    @Autowired
+    PensionRepository pensionRepository;
+    @Autowired
+    PensionService pensionService;
 
+    // to create applicant in pension
+    @PostMapping("/create/applicant")
+    public @ResponseBody
+    Pension store(@RequestBody final Pension pension) {
+        return pensionService.save(pension);
+    }
 
-    @GetMapping("/get/PensionUserName")
-    public Pension getUserByName(@RequestParam String name){
-        Pension result= pensionMap.get(name);
-        return result;
+    // to retrive by id
+    @GetMapping("/checkStatus/{id}")
+    public String checkStatus(@PathVariable int id) {
+        return pensionService.checkStatus(id);
+
+    }
+
+    @GetMapping("/checkBalance/{id}")
+    public String checkBalance(@PathVariable int id) {
+        return pensionService.checkBalance(id);
+    }
+
+    @GetMapping("/checkApplication/{id}")
+    public Pension checkApplication(@PathVariable int id) {
+        return pensionService.getApplicantById(id);
+    }
+
+    @GetMapping("/issuePension")
+    public void issuePension() {
+        pensionService.issuePension();
+    }
+
+    @GetMapping("/loadPension")
+    public void loadPension() {
+        pensionService.loadPension();
     }
 
 
 
-    @GetMapping("/get/all")
-    public Map<String,Pension> getAllUsers(){
-        return pensionMap;
-    }
 
-
-
-    @PostMapping("save/pension")
-    public void SavePensionUser(@RequestBody Pension pension){
-        String name= pension.getName();
-        pensionMap.put(name,pension);
-    }
-    @PutMapping("update/pension")
-    public Pension updatePensionUser(@RequestParam String name,@RequestParam Integer balance_amount){
-        Pension result= pensionMap.get(name);
-        result.setBalance_amount(balance_amount);
-        pensionMap.put(name,result);
-        return result;
-
-
-
-    }
-    @DeleteMapping("remove/pension")
-    public void removePensionUser(@RequestParam String name){
-        pensionMap.remove(name);
-    }
-
-    @GetMapping("/hi")
-    public String sayhi()
-    {
-        return "hi naveen";
-    }
+   /* @DeleteMapping("remove/PensionName/{id}")
+    public void deletePensionName(@PathVariable int id){
+        pensionRepository.deleteById(id);
+    }*/
 }

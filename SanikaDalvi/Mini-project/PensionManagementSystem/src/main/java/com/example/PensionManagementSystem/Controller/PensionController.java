@@ -1,53 +1,78 @@
 package com.example.PensionManagementSystem.Controller;
 
-import com.example.PensionManagementSystem.PensionRepository;
+import com.example.PensionManagementSystem.Repository.PensionRepository;
+import com.example.PensionManagementSystem.Service.PensionService;
 import com.example.PensionManagementSystem.model.Pension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class PensionController {
 
     @Autowired
     PensionRepository pensionRepository;
+    @Autowired
+    PensionService pensionService;
 
-    private Map<String,Pension> PensionMap= new HashMap<String, Pension>();
 
-    @GetMapping("/get/PensionUserName")
-    public Pension getPensionUser(@RequestParam String name){
-        Pension result= PensionMap.get(name);
-        return result;
-    }
-
-    @GetMapping("/get/all")
-    public List<Pension> getName(){
-
-        return (List<Pension>) pensionRepository.findAll();
-    }
-
-    @PostMapping("save/pension")
-    public void SavePensionUser(@RequestBody Pension pension){
-        pensionRepository.save(pension);
-    }
-
+    // sample check
     @GetMapping("hii")
-    public String sayHi(){
+    public String sayHi() {
         return "Hello";
     }
-    
-    @PutMapping("update/pension")
-    public Pension updatePensionUser(@RequestParam String name,@RequestParam Integer balance_amount){
-        Pension result= PensionMap.get(name);
-        result.setBalance_amount(balance_amount);
-        PensionMap.put(name,result);
-        return result;
+
+
+    // Create new applicant for pension management by admin
+    @PostMapping("/create/applicant")
+    public @ResponseBody
+    Pension store(@RequestBody final Pension pension)
+    {
+        return pensionService.save(pension);
+    }
+
+
+    // Check balance of particular applicant by id
+    @GetMapping("checkBalance/{id}")
+    public String checkBalance(@PathVariable int id) {
+
+        return pensionService.checkBalance(id);
+    }
+
+
+    // Check application of particular applicant by id
+    @GetMapping("/checkApplication/{id}")
+    public Pension getApplicant(@PathVariable("id") int id)
+    {
+        return pensionService.getApplicantById(id);
+    }
+    /*@GetMapping("checkApplication/{id}")
+    public String checkApplication(@PathVariable int id) {
+
+        return pensionService.checkApplication(id);
+    }*/
+
+
+    // Check status of particular applicant by id
+    @GetMapping("checkStatus/{id}")
+    public String checkStatus(@PathVariable int id) {
+
+        return pensionService.checkStatus(id);
+    }
+
+
+    // Issue pension of applicant if applicant is eligible by admin
+    @GetMapping("/issuePension")
+    public void issuePension() {
+        pensionService.issuePension();
 
     }
-    @DeleteMapping("remove/pension")
-    public void deleteStudent(@RequestParam String name){
-        PensionMap.remove(name);
+
+
+    // Load pension of applicant if applicant is eligible by admin
+    @GetMapping("/loadPension")
+    public void loadPension() {
+        pensionService.loadPension();
+
     }
+
 }
