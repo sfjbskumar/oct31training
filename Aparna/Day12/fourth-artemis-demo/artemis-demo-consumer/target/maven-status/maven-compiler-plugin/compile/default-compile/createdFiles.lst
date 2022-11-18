@@ -1,0 +1,4 @@
+com\rama\artemis\ArtemisConsumerApp.class
+com\rama\artemis\producer\ArtemisProducer.class
+com\rama\artemis\consumer\ArtemisConsumer.class
+com\rama\artemis\config\ArtemisConfig.class
