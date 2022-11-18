@@ -1,54 +1,57 @@
  package com.example.PensionManagementNaveen.controller;
-
-import com.example.PensionManagementNaveen.PensionManagementNaveenApplication;
 import com.example.PensionManagementNaveen.model.Pension;
-
 import com.example.PensionManagementNaveen.repository.PensionRepository;
+import com.example.PensionManagementNaveen.service.PensionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
-
 @RestController
 public class PensionController {
+
     @Autowired
     PensionRepository pensionRepository;
+    @Autowired
+    PensionService pensionService;
 
-
+    // to create applicant in pension
     @PostMapping("/create/applicant")
     public @ResponseBody
-    String store(@RequestBody final Pension pension)
-    {
-        pensionRepository.save(pension);
-        return "saved";
+    Pension store(@RequestBody final Pension pension) {
+        return pensionService.save(pension);
     }
+
+    // to retrive by id
     @GetMapping("/checkStatus/{id}")
-    public Pension checkStatus(@PathVariable int id)
-    {
-        return pensionRepository.findById(id).get();
+    public String checkStatus(@PathVariable int id) {
+        return pensionService.checkStatus(id);
 
     }
+
     @GetMapping("/checkBalance/{id}")
-    public Pension checkBalance(@PathVariable int id)
-    {
+    public String checkBalance(@PathVariable int id) {
+        return pensionService.checkBalance(id);
+    }
 
-        return pensionRepository.findById(id).get();
-    }
     @GetMapping("/checkApplication/{id}")
-    public Pension getName(@PathVariable int id)
-    {
-        return pensionRepository.findById(id).get();
+    public Pension checkApplication(@PathVariable int id) {
+        return pensionService.getApplicantById(id);
     }
-    @DeleteMapping("remove/PensionName/{id}")
+
+    @GetMapping("/issuePension")
+    public void issuePension() {
+        pensionService.issuePension();
+    }
+
+    @GetMapping("/loadPension")
+    public void loadPension() {
+        pensionService.loadPension();
+    }
+
+
+
+
+   /* @DeleteMapping("remove/PensionName/{id}")
     public void deletePensionName(@PathVariable int id){
         pensionRepository.deleteById(id);
-    }
-
-
-    @GetMapping("hii")
-    public String sayHi(){
-        return "Hello Naveen";
-    }
-
-
+    }*/
 }
