@@ -1,6 +1,4 @@
 package com.example.pensionmanagementsystem;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,72 +7,41 @@ public class PensionController {
 
     @Autowired
     PensionRepository pensionRepository;
-
-    // to create applicant in pension
+    @Autowired
+    PensionService pensionService;
     @PostMapping("/create/applicant")
     public @ResponseBody
-    String store(@RequestBody final Pension pension)
+    Pension store(@RequestBody final Pension pension)
     {
-        pensionRepository.save(pension);
-        return "saved";
+        return pensionService.save(pension);
     }
 
-    // to retrive by id
     @GetMapping("/checkStatus/{id}")
-    public Pension checkStatus(@PathVariable int id)
+    public String checkStatus(@PathVariable int id)
     {
-        return pensionRepository.findById(id).get();
+        return pensionService.checkStatus(id);
 
     }
-
     @GetMapping("/checkBalance/{id}")
-    public Pension checkBalance(@PathVariable int id)
+    public String checkBalance(@PathVariable int id)
     {
-
-        return pensionRepository.findById(id).get();
+        return pensionService.checkBalance(id);
     }
-
     @GetMapping("/checkApplication/{id}")
-    public Pension getName(@PathVariable int id)
+    public Pension getApplicant(@PathVariable("id") int id)
     {
-        return pensionRepository.findById(id).get();
+        return pensionService.getApplicantById(id);
     }
-
-
-    /*
-    @PutMapping("/update/PensionName/{id}")
-    public @ResponseBody Pension updatePensionName(@RequestBody Pension pension, @PathVariable int id){
-        Optional<Pension> pensionOptional=  pensionRepository.findById(id);
-        pension.setId(id);
-        pensionRepository.save(pension);
-        return pensionRepository.get();
-*/
-
-    @DeleteMapping("remove/PensionName/{id}")
-    public void deletePensionName(@PathVariable int id){
-        pensionRepository.deleteById(id);
+    @GetMapping("/issuePension")
+    public void issuePension()
+    {
+        pensionService.issuePension();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @GetMapping("/loadPension")
+    public void loadPension()
+    {
+        pensionService.loadPension();
+    }
 
 
 }
-
