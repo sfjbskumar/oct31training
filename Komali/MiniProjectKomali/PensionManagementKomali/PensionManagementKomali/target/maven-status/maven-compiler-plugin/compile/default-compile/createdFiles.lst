@@ -1,6 +1,0 @@
-com\example\PensionManagementKomali\pensionManagementKomaliApplication.class
-com\example\PensionManagementKomali\service\PensionService.class
-com\example\PensionManagementKomali\Repository\PensionRepository.class
-com\example\PensionManagementKomali\config\PensionSecurity.class
-com\example\PensionManagementKomali\controller\PensionController.class
-com\example\PensionManagementKomali\model\Pension.class
