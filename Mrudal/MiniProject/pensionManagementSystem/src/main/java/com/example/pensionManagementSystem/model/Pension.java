@@ -1,14 +1,15 @@
 package com.example.pensionManagementSystem.model;
 
 
-import org.hibernate.annotations.Columns;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity(name="pension")
+@Table(name="pension")
 @Component
 public class Pension {
 
@@ -21,22 +22,25 @@ public class Pension {
    private String name;
 
     @Column
-    private String age;
+    private Integer age;
 
     @Column
-    private Integer balance_amount;
+    private Integer balance;
 
     @Column
-    private Integer phone;
+    private String mobile;
 
     @Column
-    private String empstatus;
+    private String empStatus;
 
     @Column
     private String pensionStatus;
 
     @Column
-    private String pensionmmyyy;
+    private String pensionMMYY;
+
+    @Column
+    private Integer installment;
 
     public int getId() {
         return id;
@@ -46,28 +50,32 @@ public class Pension {
         return name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public Integer getBalance_amount() {
-        return balance_amount;
+    public Integer getBalance() {
+        return balance;
     }
 
-    public Integer getPhone() {
-        return phone;
+    public String getMobile() {
+        return mobile;
     }
 
-    public String getEmpstatus() {
-        return empstatus;
+    public String getEmpStatus() {
+        return empStatus;
     }
 
     public String getPensionStatus() {
         return pensionStatus;
     }
 
-    public String getPensionmmyyy() {
-        return pensionmmyyy;
+    public String getPensionMMYY() {
+        return pensionMMYY;
+    }
+
+    public Integer getInstallment(){
+        return installment;
     }
 
     public void setId(int id) {
@@ -78,39 +86,42 @@ public class Pension {
         this.name = name;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public void setBalance_amount(Integer balance_amount) {
-        this.balance_amount = balance_amount;
+    public void setBalance(Integer balance) {
+        this.balance = balance;
     }
 
-    public void setPhone(Integer phone) {
-        this.phone = phone;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    public void setEmpstatus(String empstatus) {
-        this.empstatus = empstatus;
+    public void setEmpStatus(String empStatus) {
+        this.empStatus = empStatus;
     }
 
     public void setPensionStatus(String pensionStatus) {
         this.pensionStatus = pensionStatus;
     }
 
-    public void setPensionmmyyy(String pensionmmyyy) {
-        this.pensionmmyyy = pensionmmyyy;
+    public void setPensionMMYY(String pensionMMYY) {
+        this.pensionMMYY = pensionMMYY;
     }
 
-    public Pension(int id, String name, String age, Integer balance_amount, Integer phone, String empstatus, String pensionStatus, String pensionmmyyy) {
+    public void setInstallment(Integer installment){this.installment=installment;}
+
+    public Pension(int id, String name, Integer age, Integer balance_amount, String  phone, String empStatus, String pensionStatus, String pensionMMYY,Integer installment) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.balance_amount = balance_amount;
-        this.phone = phone;
-        this.empstatus = empstatus;
+        this.balance = balance;
+        this.mobile = mobile;
+        this.empStatus = empStatus;
         this.pensionStatus = pensionStatus;
-        this.pensionmmyyy = pensionmmyyy;
+        this.pensionMMYY= pensionMMYY;
+        this.installment=installment;
 
 
     }
