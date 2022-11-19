@@ -12,7 +12,7 @@ mvn clean install
 ```
 
 
-#Starting MySql server in docker using(check docker-compose-mysql.yml file in project then use this command)
+# Starting MySql server in docker using(check docker-compose-mysql.yml file in project then use this command)
 ``` 
 docker-compose -f docker-compose-mysql.yml up -d
 
@@ -29,19 +29,19 @@ mvn spring-boot:run
 
 (Using Postman)
 
-# 1.Creating Applicant (Admin's operation)
+# 1.Creating Application (Can be done by Admin only)
 POST
 ``` 
 http://localhost:8082/create/applicant
 ``` 
-Authorization(Need because we gave this operation as admin role):-
+Authorization is needed because this opearion is restricted to admin only.
 ``` 
 Username:-admin123
 Password:-password
 ``` 
 Accept: application/json
 Content-type: application/json
-Body:
+Body:  raw, text: JSON
 ``` 
 {
     "id":22,
@@ -57,53 +57,52 @@ Body:
 ``` 
 
 
-# 2.Issue Pensions for all Retired employees (Admin's operation)
+# 2.Issue Pensions for all Retired employees (Can be done by admin only)
 POST
 ``` 
 http://localhost:8082/issuePension
 ``` 
-Authorization(Need because we gave this operation as admin role):-
+Authorization is needed because this operation is restricted to admin level only.
 ``` 
 Username:-admin123
 Password:-password
 ``` 
 
 
-# 3.Load Pensions for all Active employees (Admin's operation)
+# 3.Load Pensions for all Active employees (Can be done by admin only)
 POST
 ``` 
 http://localhost:8082/loadPension
 ``` 
-Authorization(Need because we gave this operation as admin role):-
+Authorization is needed because this operation is restricted to admin level only.
 ``` 
 Username:-admin123
 Password:-password
 ``` 
 
-# 4. Check Balance (User's operation)
+# 4. Check Balance (Can be done by the user also)
 GET
 ``` 
 http://localhost:8082/checkBalance/107
 ``` 
 
 
-# 5. Check Status (User's operation)
+# 5. Check Status (Can be done by the user also)
 GET
 ``` 
 http://localhost:8082/checkStatus/107
 ``` 
 
 
-# 6. Check Application Information (User's operation)
+# 6. Check Application Information (Can be done by the user also)
 
 GET
 ``` 
 http://localhost:8082/checkApplication/107
 ``` 
 
-Step 6:-
 
-#Dockerization of application(Check for Dockerfile in project then run this command)
+# Dockerization of application(Check for Dockerfile in project then run this command)
 ``` 
 mvn install dockerfile:build
 ```
