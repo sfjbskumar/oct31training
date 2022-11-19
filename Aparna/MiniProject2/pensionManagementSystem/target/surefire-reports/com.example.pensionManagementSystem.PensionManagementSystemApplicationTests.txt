@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.pensionManagementSystem.PensionManagementSystemApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.854 s - in com.example.pensionManagementSystem.PensionManagementSystemApplicationTests

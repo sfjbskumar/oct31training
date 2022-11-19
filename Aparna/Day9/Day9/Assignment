@@ -1,0 +1,27 @@
+Create  microservice
+
+hospital management
+
+patient:
+patientname
+id
+hospital name
+disease
+
+hopsital
+hospital name
+address
+id
+
+8 rest end
+
+get/patient
+post save/patient
+put  update/patient
+delete delete/patient
+
+get post put delete
+
+All the data should get stored in mysql database.
+
+hospital-management-system

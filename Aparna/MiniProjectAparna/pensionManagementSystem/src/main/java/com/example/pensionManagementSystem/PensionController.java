@@ -1,6 +1,5 @@
 package com.example.pensionManagementSystem;
-
-import com.example.pensionManagementSystem.model.Pension;
+import com.example.pensionManagementSystem.Pension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,50 +8,57 @@ public class PensionController {
 
     @Autowired
     PensionRepository pensionRepository;
+    @Autowired
+    PensionService pensionService;
 
     // to create applicant in pension
     @PostMapping("/create/applicant")
     public @ResponseBody
-    String store(@RequestBody final Pension pension)
+    Pension store(@RequestBody final Pension pension)
     {
-        pensionRepository.save(pension);
-
-        return "saved";
+        return pensionService.save(pension);
     }
 
-    // to retrive by id
+    // to show status by id
     @GetMapping("/checkStatus/{id}")
-    public Pension checkStatus(@PathVariable int id)
+    public String checkStatus(@PathVariable int id)
     {
-        return pensionRepository.findById(id).get();
-
+        return pensionService.checkStatus(id);
     }
 
+    // to show balance by id
     @GetMapping("/checkBalance/{id}")
-    public Pension checkBalance(@PathVariable int id)
+    public String checkBalance(@PathVariable int id)
     {
-
-        return pensionRepository.findById(id).get();
+        return pensionService.checkBalance(id);
     }
 
+    //to show applican detail by id
     @GetMapping("/checkApplication/{id}")
-    public Pension getName(@PathVariable int id) {
-        return pensionRepository.findById(id).get();
+    public Pension getApplicant(@PathVariable("id") int id)
+    {
+        return pensionService.getApplicantById(id);
+    }
+
+    //to issue pension
+    @GetMapping("/issuePension")
+    public void issuePension()
+    {
+        pensionService.issuePension();
+    }
+
+    //to load pension
+    @GetMapping("/loadPension")
+    public void loadPension()
+    {
+        pensionService.loadPension();
     }
 
 
-    /*
-    @PutMapping("/update/PensionName/{id}")
-    public @ResponseBody Pension updatePensionName(@RequestBody Pension pension, @PathVariable int id){
-        Optional<Pension> pensionOptional=  pensionRepository.findById(id);
-        pension.setId(id);
-        pensionRepository.save(pension);
-        return pensionRepository.get();
-*/
-
-    @DeleteMapping("remove/PensionName/{id}")
+    //to delete by id
+   /* @DeleteMapping("remove/PensionName/{id}")
     public void deletePensionName(@PathVariable int id){
         pensionRepository.deleteById(id);
+    }*/
 
-    }
 }

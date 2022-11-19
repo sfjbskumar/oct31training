@@ -9,35 +9,43 @@ public class PensionController {
 
     @Autowired
     PensionRepository pensionRepository;
+    @Autowired
+    PensionService pensionService;
 
     // to create applicant in pension
     @PostMapping("/create/applicant")
     public @ResponseBody
-    String store(@RequestBody final Pension pension)
+    Pension store(@RequestBody final Pension pension)
     {
-        pensionRepository.save(pension);
-        return "saved";
+        return pensionService.save(pension);
+    }
+
+    @GetMapping("/checkStatus/{id}")
+    public String checkStatus(@PathVariable int id)
+    {
+        return pensionService.checkStatus(id);
+
     }
 
     // to retrive by id
-    @GetMapping("/checkStatus/{id}")
+    /**@GetMapping("/checkStatus/{id}")
     public Pension checkStatus(@PathVariable int id)
     {
       return pensionRepository.findById(id).get();
 
-    }
+    }**/
 
     @GetMapping("/checkBalance/{id}")
-    public Pension checkBalance(@PathVariable int id)
+    public String checkBalance(@PathVariable int id)
     {
 
-        return pensionRepository.findById(id).get();
+        return pensionService.checkBalance(id);
     }
 
     @GetMapping("/checkApplication/{id}")
-    public Pension getName(@PathVariable int id)
+    public Pension getApplicant(@PathVariable("id") int id)
     {
-      return pensionRepository.findById(id).get();
+        return pensionService.checkApplication(id);
     }
 
 
@@ -50,10 +58,21 @@ public class PensionController {
         return pensionRepository.get();
 */
 
-    @DeleteMapping("remove/PensionName/{id}")
+
+    @GetMapping("/issuePension")
+    public void issuePension()
+    {
+        pensionService.issuePension();
+    }
+    @GetMapping("/loadPension")
+    public void loadPension()
+    {
+        pensionService.loadPension();
+    }
+    /**@DeleteMapping("remove/PensionName/{id}")
     public void deletePensionName(@PathVariable int id){
         pensionRepository.deleteById(id);
-    }
+    }**/
 
 
 
