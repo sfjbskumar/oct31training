@@ -12,13 +12,14 @@ public class PensionSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/create/applicant").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/issuePension").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.GET, "/loadPension").hasAnyRole("ADMIN").and().csrf().disable().headers()
+                .antMatchers(HttpMethod.POST, "/save/PensionName").hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/update/PensionName").hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/remove/PensionName").hasAnyRole("ADMIN").and().csrf().disable().headers()
                 .frameOptions().disable();
 
 
     }
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user123").password("{noop}password").roles("USER").and()

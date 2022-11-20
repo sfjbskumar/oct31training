@@ -1,4 +1,6 @@
 package com.example.pensionmanagementsystem;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,41 +9,72 @@ public class PensionController {
 
     @Autowired
     PensionRepository pensionRepository;
-    @Autowired
-    PensionService pensionService;
+
+    // to create applicant in pension
     @PostMapping("/create/applicant")
     public @ResponseBody
-    Pension store(@RequestBody final Pension pension)
+    String store(@RequestBody final Pension pension)
     {
-        return pensionService.save(pension);
+        pensionRepository.save(pension);
+        return "saved";
     }
 
+    // to retrive by id
     @GetMapping("/checkStatus/{id}")
-    public String checkStatus(@PathVariable int id)
+    public Pension checkStatus(@PathVariable int id)
     {
-        return pensionService.checkStatus(id);
+        return pensionRepository.findById(id).get();
 
     }
+
     @GetMapping("/checkBalance/{id}")
-    public String checkBalance(@PathVariable int id)
+    public Pension checkBalance(@PathVariable int id)
     {
-        return pensionService.checkBalance(id);
+
+        return pensionRepository.findById(id).get();
     }
+
     @GetMapping("/checkApplication/{id}")
-    public Pension getApplicant(@PathVariable("id") int id)
+    public Pension getName(@PathVariable int id)
     {
-        return pensionService.getApplicantById(id);
+        return pensionRepository.findById(id).get();
     }
-    @GetMapping("/issuePension")
-    public void issuePension()
-    {
-        pensionService.issuePension();
+
+
+    /*
+    @PutMapping("/update/PensionName/{id}")
+    public @ResponseBody Pension updatePensionName(@RequestBody Pension pension, @PathVariable int id){
+        Optional<Pension> pensionOptional=  pensionRepository.findById(id);
+        pension.setId(id);
+        pensionRepository.save(pension);
+        return pensionRepository.get();
+*/
+
+    @DeleteMapping("remove/PensionName/{id}")
+    public void deletePensionName(@PathVariable int id){
+        pensionRepository.deleteById(id);
     }
-    @GetMapping("/loadPension")
-    public void loadPension()
-    {
-        pensionService.loadPension();
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
+

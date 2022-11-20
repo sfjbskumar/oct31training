@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pension-managment-system" />
-        <module name="Pension-Managment-System" />
       </profile>
     </annotationProcessing>
   </component>
