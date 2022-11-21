@@ -1,0 +1,29 @@
+id  int
+name String
+age String
+balance amount  Integer--Icrease  -- Decrease
+phone integer
+empstatus  A   R  String
+pensionstatus  String(Y/N)
+pensionmmyy String
+installment
+
+
+
+Admin can create his application--> /create/applicant -->PensionJSON(POST)
+Admin--> can edit application details  -->/edit/applicant-->PensionJSON(POST)
+ -------------------------------------
+Admin can issue pensions if EMploy R and Pension status Y -->issuePension GET
+Bal= Bal-installment
+pensionmonth = currentmonth
+
+
+Admin can load the pension if Employ A Pension N' --- loadPension GET
+Bal = Bal+installment
+-------------------------------------  All are GET calls -------------------------------------------------
+Admin has to approve Pension when Employ R  -->approve/{id} -->success/or fail/ PensionJSON  GET
+Admin approval will fail if Employment status is A
+
+Applicant can check status -->/checkSatus/{id}--> id  EmpStatus PenStatus
+Applicant can check balance -->/checkBalance/{id}--> id  Bala Installment pensinmonth
+Applicant can Application Infor-->/checkApplication/{id}--> PensionJSON full information
