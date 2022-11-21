@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -8,21 +8,17 @@
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>pension_managment_system</artifactId>
+	<groupId>com.pensionsystem</groupId>
+	<artifactId>pension_management</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pension_managment_system</name>
+	<name>pension_management</name>
 	<description>Demo project for Spring Boot</description>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<docker.image.prefix>mrudal123</docker.image.prefix>
+		<docker.image.prefix>arati17</docker.image.prefix>
 	</properties>
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,12 +40,6 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-
-		<!--<dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -58,7 +48,6 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
-
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -71,8 +60,6 @@
 			<artifactId>junit</artifactId>
 			<version>4.5</version>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
@@ -86,8 +73,6 @@
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.4.13</version>
-
-
 
 				<configuration>
 					<repository>${docker.image.prefix}/${project.artifactId}</repository>
