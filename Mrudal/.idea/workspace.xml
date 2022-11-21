@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca252783-694c-476f-90b8-ade757286e34" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/hs_err_pid12876.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Komali/MiniProjectKomali/PensionManagementKomali/PensionManagementKomali/src/main/java/com/example/PensionManagementKomali/PensionManagementKomaliApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Komali/MiniProjectKomali/PensionManagementKomali/PensionManagementKomali/src/main/java/com/example/PensionManagementKomali/PensionManagementKomaliApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/Pension.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/Pension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/PensionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/PensionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/PensionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/PensionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/pensionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/java/com/example/pensionManagementSystem/model/pensionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject/pensionManagementSystem/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Komali/MiniProjectKomali/PensionManagementKomali/PensionManagementKomali/src/main/java/com/example/PensionManagementKomali/pensionManagementKomaliApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Komali/MiniProjectKomali/PensionManagementKomali/PensionManagementKomali/src/main/java/com/example/PensionManagementKomali/pensionManagementKomaliApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/sfjbs/IdeaProjects/oct31training/Mrudal/MiniProject/pensionManagementSystem"
+    "last_opened_file_path": "C:/Users/sfjbs/IdeaProjects/oct31training/Mrudal"
   }
 }]]></component>
   <component name="RecentsManager">
