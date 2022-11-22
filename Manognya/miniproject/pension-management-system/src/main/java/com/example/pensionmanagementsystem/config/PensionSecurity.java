@@ -1,4 +1,4 @@
-package com.example.pensionmanagementsystem.config;
+package com.example.pensionmanagementsystem;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -12,9 +12,9 @@ public class PensionSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/save/PensionName").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "/update/PensionName").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.GET, "/remove/PensionName").hasAnyRole("ADMIN").and().csrf().disable().headers()
+                .antMatchers(HttpMethod.POST, "/create/applicant").hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/issuePension").hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/loadPension").hasAnyRole("ADMIN").and().csrf().disable().headers()
                 .frameOptions().disable();
 
 
