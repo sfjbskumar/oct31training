@@ -1,0 +1,10 @@
+1)Create one producer sending message to one queue.
+Two consumer lisening to the same queue.
+
+Queue name: queue_one
+
+2)Create one producer sending message to two queue.
+Two consumer lisening to the two different queue.
+
+Queue1 name: queue_one
+Queue2 name:queue_two
