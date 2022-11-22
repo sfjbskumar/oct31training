@@ -1,0 +1,5 @@
+com\rama\artemis\controller\ProducerController.class
+com\rama\artemis\producer\ArtemisProducer.class
+com\rama\artemis\consumer\ArtemisConsumer.class
+com\rama\artemis\ArtemisProducerApp.class
+com\rama\artemis\config\ArtemisConfig.class
