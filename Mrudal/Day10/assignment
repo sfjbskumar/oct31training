@@ -1,0 +1,56 @@
+Hospital management system:
+
+Security:
+
+Group: DOCTOR, PATIENT(user1,user2,user3,)
+
+Two Controller: DoctorContoller,PatientController
+
+DoctorController:
+
+GetMapping :/dockers/doctorappointment(doctorName)
+Return  List of appointment
+
+PatientController:
+
+GetMapping /patient/myappointment(patientname)
+return list appointment
+
+PrescriptionController(both can access)
+
+ GetMapping /viewprescription(patientname)
+ return prescription
+
+ PostMapping/saveprescription
+ savePrescription(Body)
+
+AppointMent:
+
+appointment_id
+patientName,
+doctorName,
+Date,
+prescription
+
+Precription:
+
+prescriptionId
+appointmentid
+description
+patientName
+doctorName
+
+
+
+AppointmentRepository
+
+findByDoctorName
+findByPatientName
+
+
+PrescriptionRepository
+
+findByPatientName
+
+
+

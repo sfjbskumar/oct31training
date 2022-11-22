@@ -1,0 +1,196 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for Failed to commit area from 0x0000000080000000 to 0x0000000088000000 of length 134217728.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3287), pid=1856, tid=10496
+#
+# JRE version:  (11.0.16+11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.16+11-LTS-199, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xverify:none -XX:TieredStopAtLevel=1 com.rama.artemis.ArtemisConsumerApp
+
+Host: Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz, 2 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2251)
+Time: Tue Nov 22 05:48:27 2022 Coordinated Universal Time elapsed time: 0.070141 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002a6c68b1800):  JavaThread "Unknown thread" [_thread_in_vm, id=10496, stack(0x000000bf59400000,0x000000bf59500000)]
+
+Stack: [0x000000bf59400000,0x000000bf59500000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x62a3ea]
+V  [jvm.dll+0x76418f]
+V  [jvm.dll+0x765839]
+V  [jvm.dll+0x765ec3]
+V  [jvm.dll+0x23da98]
+V  [jvm.dll+0x62770a]
+V  [jvm.dll+0x61c475]
+V  [jvm.dll+0x2f2aac]
+V  [jvm.dll+0x2f2932]
+V  [jvm.dll+0x2f7656]
+V  [jvm.dll+0x33a1cf]
+V  [jvm.dll+0x339c00]
+V  [jvm.dll+0x2d00c8]
+V  [jvm.dll+0x2d1236]
+V  [jvm.dll+0x73e757]
+V  [jvm.dll+0x73ffef]
+V  [jvm.dll+0x346ef9]
+V  [jvm.dll+0x723f90]
+V  [jvm.dll+0x3b5adf]
+V  [jvm.dll+0x3b7bf1]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x174b4]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002a6c66b5dd0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002a6c68c6800 GCTaskThread "GC Thread#0" [stack: 0x000000bf59500000,0x000000bf59600000] [id=11632]
+  0x000002a6c68f1000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000bf59600000,0x000000bf59700000] [id=6264]
+  0x000002a6c68f3000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000bf59700000,0x000000bf59800000] [id=8188]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff946ccf357]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002a6c68ac5c0] Heap_lock - owner thread: 0x000002a6c68b1800
+
+Heap address: 0x0000000080000000, size: 2048 MB, Compressed Oops mode: Non-zero based: 0x0000000080000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff73ad30000 - 0x00007ff73ad3f000 	C:\Program Files\Java\jdk-11.0.16\bin\java.exe
+0x00007ff979930000 - 0x00007ff979b28000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff977d30000 - 0x00007ff977def000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff977170000 - 0x00007ff977442000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff977880000 - 0x00007ff977980000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff9599c0000 - 0x00007ff9599d8000 	C:\Program Files\Java\jdk-11.0.16\bin\jli.dll
+0x00007ff9779e0000 - 0x00007ff977a8e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff957720000 - 0x00007ff957735000 	C:\Program Files\Java\jdk-11.0.16\bin\VCRUNTIME140.dll
+0x00007ff979850000 - 0x00007ff9798ee000 	C:\Windows\System32\msvcrt.dll
+0x00007ff978030000 - 0x00007ff9780cc000 	C:\Windows\System32\sechost.dll
+0x00007ff979660000 - 0x00007ff979785000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff978b40000 - 0x00007ff978cdd000 	C:\Windows\System32\USER32.dll
+0x00007ff977030000 - 0x00007ff977052000 	C:\Windows\System32\win32u.dll
+0x00007ff977d00000 - 0x00007ff977d2b000 	C:\Windows\System32\GDI32.dll
+0x00007ff977060000 - 0x00007ff97716f000 	C:\Windows\System32\gdi32full.dll
+0x00007ff9777e0000 - 0x00007ff97787d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff95aeb0000 - 0x00007ff95b14a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff96f040000 - 0x00007ff96f04a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff977df0000 - 0x00007ff977e22000 	C:\Windows\System32\IMM32.DLL
+0x00007ff952e00000 - 0x00007ff952e9b000 	C:\Program Files\Java\jdk-11.0.16\bin\msvcp140.dll
+0x00007ff9469f0000 - 0x00007ff947508000 	C:\Program Files\Java\jdk-11.0.16\bin\server\jvm.dll
+0x00007ff977f70000 - 0x00007ff977f78000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff972e00000 - 0x00007ff972e09000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff978130000 - 0x00007ff97819b000 	C:\Windows\System32\WS2_32.dll
+0x00007ff958c00000 - 0x00007ff958c27000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff974ed0000 - 0x00007ff974ee2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ff9640a0000 - 0x00007ff9640b0000 	C:\Program Files\Java\jdk-11.0.16\bin\verify.dll
+0x00007ff968d20000 - 0x00007ff968f04000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ff96a1f0000 - 0x00007ff96a21c000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ff977450000 - 0x00007ff9774d2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ff9561c0000 - 0x00007ff9561e8000 	C:\Program Files\Java\jdk-11.0.16\bin\java.dll
+0x00007ff95e220000 - 0x00007ff95e22a000 	C:\Program Files\Java\jdk-11.0.16\bin\jimage.dll
+0x00007ff953310000 - 0x00007ff953326000 	C:\Program Files\Java\jdk-11.0.16\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.16\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Java\jdk-11.0.16\bin\server
+
+VM Arguments:
+jvm_args: -Xverify:none -XX:TieredStopAtLevel=1 
+java_command: com.rama.artemis.ArtemisConsumerApp
+java_class_path (initial): C:\Users\sfjbs\IdeaProjects\oct31training\Mrudal\Day12\fourth-artemis-demo\artemis-demo-consumer\target\classes;C:\Users\sfjbs\.m2\repository\org\springframework\boot\spring-boot\2.7.0\spring-boot-2.7.0.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-context\5.3.20\spring-context-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.7.0\spring-boot-autoconfigure-2.7.0.jar;C:\Users\sfjbs\.m2\repository\ch\qos\logback\logback-classic\1.2.11\logback-classic-1.2.11.jar;C:\Users\sfjbs\.m2\repository\ch\qos\logback\logback-core\1.2.11\logback-core-1.2.11.jar;C:\Users\sfjbs\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.17.2\log4j-to-slf4j-2.17.2.jar;C:\Users\sfjbs\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;C:\Users\sfjbs\.m2\repository\org\slf4j\jul-to-slf4j\1.7.36\jul-to-slf4j-1.7.36.jar;C:\Users\sfjbs\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-core\5.3.20\spring-core-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-jcl\5.3.20\spring-jcl-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\yaml\snakeyaml\1.30\snakeyaml-1.30.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-jms\5.3.20\spring-jms-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-beans\5.3.20\spring-beans-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-messaging\5.3.20\spring-messaging-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\springframework\spring-tx\5.3.20\spring-tx-5.3.20.jar;C:\Users\sfjbs\.m2\repository\org\apache\activemq\activemq-broker\5.16.5\activemq-broker-5.16.5.jar;C:\Users\sfjbs\.m2\repository\org\apache\activemq\activemq-client\5.16.5\activemq-client-5.16.5.jar;C:\Users\sfjbs\.m2\repository\org\fusesource\hawtbuf\hawtbuf\1.11\hawtbuf-1.11.jar;C:\Users\sfjbs\.m2\repository\org\apache\activemq\active
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool BytecodeVerificationLocal                = false                                     {product} {command line}
+     bool BytecodeVerificationRemote               = false                                     {product} {command line}
+     intx CICompilerCount                          = 2                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 2                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2147483648                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 6396312                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 245261928                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\sfjbs\Downloads\micro service-20221021T071039Z-001\micro service\apache-maven-3.8.5-bin\apache-maven-3.8.5\bin;C:\Users\sfjbs\Downloads\micro service-20221021T071039Z-001\micro service\apache-maven-3.8.5-bin\apache-maven-3.8.5\lib;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Users\sfjbs\AppData\Local\Microsoft\WindowsApps;C:\Users\sfjbs\Downloads\micro service-20221021T071039Z-001\micro service\apache-maven-3.8.5-bin\apache-maven-3.8.5\bin;C:\Users\sfjbs\Downloads\micro service-20221021T071039Z-001\micro service\apache-maven-3.8.5-bin\apache-maven-3.8.5\lib;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin;
+USERNAME=sfjbs
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 85 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.2251)
+Hyper-V role detected
+
+CPU:total 2 (initial active 2) (1 cores per cpu, 2 threads per core) family 6 model 85 stepping 7 microcode 0xffffffff, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, bmi1, bmi2, adx, evex, fma
+
+Memory: 4k page, system-wide physical 8190M (1302M free)
+TotalPageFile size 10238M (AvailPageFile size 72M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 45M, peak: 173M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.16+11-LTS-199) for windows-amd64 JRE (11.0.16+11-LTS-199), built on Jun 28 2022 08:23:17 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.
