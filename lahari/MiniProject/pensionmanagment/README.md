@@ -1,6 +1,6 @@
 [# Final Project(Pension Management System)
 
-##Creating Project
+Creating Project
 1.Go to Spring initializer By selecting Java Version,Maven and Dependencies. 2.Extract the file 3.Clone it
 
 Creating Pom.xml
@@ -40,10 +40,10 @@ Testing applications
    ##with body
 
 {   "id":200,
-"name":"lahari",
+"name":"Deekshita",
 "age":21,
 "balance":10000,
-"mobile":"987645567",
+"mobile":"9876455",
 "empStatus":"A",
 "pensionStatus":"N",
 "pensionMMYY":"0922",

@@ -9,14 +9,20 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ahmed</groupId>
-	<artifactId>PensionManagementSystem</artifactId>
+	<artifactId>pensionmanagementsystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PensionManagementSystem</name>
+	<name>pensionmanagementsystem</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.5</spring-cloud.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<docker.image.prefix>ehsanullah08</docker.image.prefix>
 	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,6 +60,17 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
@@ -72,7 +89,30 @@
 	</dependencyManagement>
 
 	<build>
-		<plugins>
+	<plugins>
+	<plugin>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-maven-plugin</artifactId>
+		<version>${project.parent.version}</version>
+	</plugin>
+	<plugin>
+		<groupId>com.spotify</groupId>
+		<artifactId>dockerfile-maven-plugin</artifactId>
+		<version>1.4.13</version>
+
+
+
+		<configuration>
+			<repository>${docker.image.prefix}/${project.artifactId}</repository>
+			<buildArgs>
+				<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+			</buildArgs>
+			<tag>${project.version}</tag>
+		</configuration>
+	</plugin>
+
+
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
