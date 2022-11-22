@@ -46,7 +46,7 @@ public class PensionController {
         return pensionService.checkBalance(id);
     }
 
-    //to show applican detail by id
+    //to show applicant detail by id
     @GetMapping("/checkApplication/{id}")
     public Pension getApplicant(@PathVariable("id") int id)
     {
