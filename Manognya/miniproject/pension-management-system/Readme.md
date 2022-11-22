@@ -1,17 +1,17 @@
-#Create Project
+# Create Project
 create the project structure using Spring Initializr : https://start.spring.io/
 
-#Build Project
+# Build Project
 After creating Pension.java,PensionRepository,PensionController and PensionService run the project:
 mvn clean install
 
-#Run Project
+# Run Project
 mvn spring-boot:run
 
-#Dockerization
+# Dockerization
 docker-compose -f docker-compose-mysql.yml up -d
 
-#Testing via Postman
+# Testing via Postman
 
 Admin's operation:
 
