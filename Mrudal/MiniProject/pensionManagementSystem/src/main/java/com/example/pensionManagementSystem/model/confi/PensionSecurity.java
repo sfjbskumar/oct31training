@@ -20,8 +20,8 @@ public class PensionSecurity extends WebSecurityConfigurerAdapter {
                 //.antMatchers(HttpMethod.GET, "/get/all").hasAnyRole("ADMIN")
                 //.antMatchers(HttpMethod.GET, "/pension/{id}").hasAnyRole("ADMIN")
                 .antMatchers(HttpMethod.POST, "save/pension").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.PUT, "update/pension").hasAnyRole("ADMIN")
-                .antMatchers(HttpMethod.DELETE, "remove/pension").hasAnyRole("ADMIN").and().csrf().disable().headers()
+                .antMatchers(HttpMethod.GET, "issuePension").hasAnyRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "loadPension").hasAnyRole("ADMIN").and().csrf().disable().headers()
                 .frameOptions().disable();
     }
 

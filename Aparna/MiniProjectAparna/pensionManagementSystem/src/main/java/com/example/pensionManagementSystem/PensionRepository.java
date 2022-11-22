@@ -1,5 +1,6 @@
 package com.example.pensionManagementSystem;
-import com.example.pensionManagementSystem.model.Pension;
+import com.example.pensionManagementSystem.Pension;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
@@ -30,9 +31,8 @@ public interface PensionRepository extends JpaRepository<Pension, Integer>
     @Query("update pensiondetails pd set pd.balance=pd.balance+pd.installment, pensionMMYY=?3 where pd.empStatus=?1 and pd.pensionStatus=?2 and pd.pensionMMYY LIKE ?4")
     void loadPension(String empStatus, String pensionStatus, String currentMMYY, String prevMMYY);
 
-
-
    /* @Modifying
     @Query("update pensiondetails pd set pd.pensionStatus=?1 where pd.id=?2")
     void approveApplication(String pensionStatus, int id);*/
+
 }

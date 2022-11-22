@@ -7,33 +7,52 @@ import org.springframework.web.bind.annotation.*;
 public class PensionController {
     @Autowired
     PensionRepository pensionRepository;
+    @Autowired
+    PensionService pensionService;
 
 
     @GetMapping("checkbalance/{id}")
-    public PensionManagemetSys checkbalace(@PathVariable int id) {
+    public String checkBalance(@PathVariable int id) {
 
-        return pensionRepository.findById(id).get();
+        return pensionService.checkBalance(id);
 
 
     }
 
     @GetMapping("checkapplication/{id}")
-    public PensionManagemetSys checkapplication(@PathVariable int id) {
+    public PensionManagemetSys checkApplication(@PathVariable int id) {
 
-        return pensionRepository.findById(id).get();
+        return pensionService.getApplicantById(id);
     }
 
     @GetMapping("checkstatus/{id}")
-    public PensionManagemetSys getName(@PathVariable int id) {
+    public String checkStatus(@PathVariable int id) {
 
-        return pensionRepository.findById(id).get();
+        return pensionService.checkStatus(id);
     }
 
     @PostMapping("create/applicant")
-    public void SavePensionManagemetSys(@RequestBody PensionManagemetSys pen) {
-        pensionRepository.save(pen);
+    public @ResponseBody
+    PensionManagemetSys store(@RequestBody final PensionManagemetSys pension) {
+        return pensionService.save(pension);
     }
 
+    @GetMapping("/issuePension")
+    public void issuePension()
+    {
+        pensionService.issuePension();
+    }
+    @GetMapping("/loadPension")
+    public void loadPension()
+    {
+        pensionService.loadPension();
+    }
+
+
+    //@DeleteMapping("remove/PensionName/{id}")
+    //public void deletePensionName(@PathVariable int id){
+    //pensionRepository.deleteById(id);
+//}
 
 
 }

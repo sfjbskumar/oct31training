@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Test set: com.ahmed.PensionManagementSystem.PensionControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 20.528 s <<< FAILURE! - in com.ahmed.PensionManagementSystem.PensionControllerTest
+testCheckApplicant  Time elapsed: 0.689 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "{"id":201,"name":"Ahmed","age":22,"balance":90000,"mobile":"9988776655","empStatus":"A","pensionStatus":"N","pensionMMYY":"0922","installment":980}"
+ but was: ""
+	at com.ahmed.PensionManagementSystem.PensionControllerTest.testCheckApplicant(PensionControllerTest.java:127)
+
+testCreateApplicant  Time elapsed: 7.679 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "{"id":201,"name":"Ahmed","age":22,"balance":90000,"mobile":"9988776655","empStatus":"A","pensionStatus":"N","pensionMMYY":"0922","installment":980}"
+ but was: ""
+	at com.ahmed.PensionManagementSystem.PensionControllerTest.testCreateApplicant(PensionControllerTest.java:67)
+
+testCheckBalance  Time elapsed: 0.495 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+
+expected: "90000"
+ but was: ""
+	at com.ahmed.PensionManagementSystem.PensionControllerTest.testCheckBalance(PensionControllerTest.java:93)
+
